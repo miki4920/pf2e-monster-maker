@@ -21,10 +21,11 @@
     
   ],
   "esmodules": [
-    "/scripts/module.js"
+    "/scripts/module.js",
+    "/scripts/lib/lib.js",
+    "/scripts/lib/apply_data.js"
   ],
   "scripts": [
-    "/scripts/lib/lib.js"
   ],
   "styles": [
     "/styles/module.css"

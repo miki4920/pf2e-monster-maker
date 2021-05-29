@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16952765-5799-435e-9642-aa5dcaae8fff" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
+=======
+      <change afterPath="$PROJECT_DIR$/scripts/lib/apply_data.js" afterDir="false" />
+>>>>>>> Stashed changes
       <change afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module.json" beforeDir="false" afterPath="$PROJECT_DIR$/module.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/lib/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/lib.js" afterDir="false" />
@@ -12,6 +16,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< Updated upstream
+=======
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+>>>>>>> Stashed changes
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -42,7 +56,12 @@
       <option name="presentableId" value="Default" />
       <updated>1622142233325</updated>
       <workItem from="1622142237495" duration="2022000" />
+<<<<<<< Updated upstream
       <workItem from="1622217210084" duration="3486000" />
+=======
+      <workItem from="1622217210084" duration="4041000" />
+      <workItem from="1622305279337" duration="6986000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

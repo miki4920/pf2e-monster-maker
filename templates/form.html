@@ -1,3 +1,24 @@
+<<<<<<< Updated upstream
 <form class="creature-builder" autocomplete="off">
     <label>Create a Pathfinder creature based on values provided by official rules.</label>
 </form>
+=======
+<form class="creature_builder">
+    <div class="creature_builder_input">
+        <label for="creature_name">Creature's Name<span>*</span></label>
+        <input type="text" placeholder="Insert Creature's Name" name="creature_name" id="creature_name" required="required">
+    </div>
+    <div class="creature_builder_input">
+        <label for="creature_level">Level</label>
+        <input type="number" name="creature_level" value="-1" min="-1" max="24" step="1" id="creature_level">
+    </div>
+    <div class="creature_builder_input">
+        <label for="creature_roadmap">Road Map</label>
+        <select name="creature_roadmap" id="creature_roadmap">
+            {{#each roadMaps as |roadMap|}}
+            <option>{{roadMap.name}}</option>
+            {{/each}}
+        </select>
+    </div>
+</form>
+>>>>>>> Stashed changes
