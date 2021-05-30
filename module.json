@@ -23,7 +23,8 @@
   "esmodules": [
     "/scripts/module.js",
     "/scripts/lib/lib.js",
-    "/scripts/lib/apply_data.js"
+    "/scripts/lib/apply_data.js",
+    "/scripts/lib/data/abilities.js"
   ],
   "scripts": [
   ],

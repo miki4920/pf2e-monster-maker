@@ -1,3 +1,5 @@
+import {abilities} from "./data/abilities.js"
+
 export class ApplyData {
     constructor(actor, form_data) {
         this.actor = actor;
@@ -15,13 +17,15 @@ export class ApplyData {
         if(!level) {
             return
         }
+        this.apply_abilities();
+
     }
 
     apply_name() {
-        let name = this.form_data.creature_name;
+        let name = this.form_data.get("creature_name");
         let regex = new RegExp("^[a-zA-Z0-9 ]*$");
         if(name.length > 0 && regex.test(name)) {
-            this.actor.update({"name": this.form_data.creature_name})
+            this.actor.update({"name": name})
             return true;
         }
         else if(name.length > 0) {
@@ -30,21 +34,31 @@ export class ApplyData {
     }
 
     apply_level() {
-        let level = this.form_data.creature_level;
+        let level = this.form_data.get("creature_level");
         if(isNaN(level)) {
             ui.notifications.error(`The character level must be a number.`);
         }
         else {
             level = parseInt(level);
             if(-1 <= level && level <= 24) {
-                this.level = level;
-                this.actor.update({"data.details.level.value": level});
+                this.level = this.form_data.get("creature_level");
+                this.actor.update({"data.details.level.value": this.form_data.get("creature_level")});
                 return true;
             }
             else {
                 ui.notifications.error(`The character level must be between -1 and 24.`);
             }
         }
+    }
 
+    apply_abilities() {
+        let ability_names = Object.keys(abilities["abilities"]);
+        this.actor.update({"data.abilities.str.mod": "100"});
+        for(var ability of ability_names) {
+            let dict = {}
+            let path = abilities["abilities"][ability]
+            dict[path] = abilities["scores"][this.level][this.form_data.get(ability)]
+            this.actor.update(dict);
+        }
     }
 }

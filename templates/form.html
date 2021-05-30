@@ -1,16 +1,11 @@
-<<<<<<< Updated upstream
-<form class="creature-builder" autocomplete="off">
-    <label>Create a Pathfinder creature based on values provided by official rules.</label>
-</form>
-=======
 <form class="creature_builder">
     <div class="creature_builder_input">
         <label for="creature_name">Creature's Name<span>*</span></label>
-        <input type="text" placeholder="Insert Creature's Name" name="creature_name" id="creature_name" required="required">
+        <input type="text" placeholder="Insert Creature's Name" name="creature_name" id="creature_name">
     </div>
     <div class="creature_builder_input">
         <label for="creature_level">Level</label>
-        <input type="number" name="creature_level" value="-1" min="-1" max="24" step="1" id="creature_level">
+        <input type="text" name="creature_level" value="-1" id="creature_level">
     </div>
     <div class="creature_builder_input">
         <label for="creature_roadmap">Road Map</label>
@@ -20,5 +15,22 @@
             {{/each}}
         </select>
     </div>
+    <div class="creature_builder_input">
+        {{#each template_abilities as |ability|}}
+        <label for={{ability}}>{{ability}}</label>
+        <div id={{ability}}>
+        <input type="radio" name={{ability}} id={{ability}}_extreme value="extreme">
+            <label for={{ability}}_extreme>Extreme</label>
+        <input type="radio" name={{ability}} id={{ability}}_high value="high">
+            <label for={{ability}}_high>High</label>
+
+        <input type="radio" name={{ability}} id={{ability}}_moderate value="moderate" checked>
+            <label for={{ability}}_moderate>Moderate</label>
+
+        <input type="radio" name={{ability}} id={{ability}}_low value="low">
+            <label for={{ability}}_low>Low</label>
+        </div>
+        {{/each}}
+
+    </div>
 </form>
->>>>>>> Stashed changes

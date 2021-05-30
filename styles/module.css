@@ -1,0 +1,27 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.creature_builder_input {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.creature_builder_input input[type="radio"] {
+    display: none;
+}
+
+.creature_builder_input div{
+    display: flex;
+}
+
+.creature_builder_input div label{
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+.creature_builder_input input[type="radio"]:checked+label {
+    background-color: #bbb;
+}
