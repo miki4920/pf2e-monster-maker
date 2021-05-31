@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 import {abilities} from "./data/abilities.js"
+=======
+import {data} from "./data/abilities.js"
+>>>>>>> Stashed changes
 
 export class ApplyData {
     constructor(actor, form_data) {
@@ -18,7 +22,10 @@ export class ApplyData {
             return
         }
         this.apply_abilities();
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 
     apply_name() {
@@ -53,7 +60,10 @@ export class ApplyData {
 
     apply_abilities() {
         let ability_names = Object.keys(abilities["abilities"]);
+<<<<<<< Updated upstream
         this.actor.update({"data.abilities.str.mod": "100"});
+=======
+>>>>>>> Stashed changes
         for(var ability of ability_names) {
             let dict = {}
             let path = abilities["abilities"][ability]
@@ -61,4 +71,13 @@ export class ApplyData {
             this.actor.update(dict);
         }
     }
+<<<<<<< Updated upstream
+=======
+
+    apply_perception() {
+        let dict = {}
+        let path = perception["path"]
+        dict[path] = perception["scores"][this.level][this.form_data.get("Perception")]
+    }
+>>>>>>> Stashed changes
 }
