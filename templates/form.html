@@ -16,24 +16,6 @@
         </select>
     </div>
     <div class="creature_builder_input">
-<<<<<<< Updated upstream
-        {{#each template_abilities as |ability|}}
-        <label for={{ability}}>{{ability}}</label>
-        <div id={{ability}}>
-        <input type="radio" name={{ability}} id={{ability}}_extreme value="extreme">
-            <label for={{ability}}_extreme>Extreme</label>
-        <input type="radio" name={{ability}} id={{ability}}_high value="high">
-            <label for={{ability}}_high>High</label>
-
-        <input type="radio" name={{ability}} id={{ability}}_moderate value="moderate" checked>
-            <label for={{ability}}_moderate>Moderate</label>
-
-        <input type="radio" name={{ability}} id={{ability}}_low value="low">
-            <label for={{ability}}_low>Low</label>
-        </div>
-        {{/each}}
-
-=======
         {{#each template_keys as |dictionary|}}
         {{#with dictionary as |key|}}
         <label for="{{name}}">{{name}}</label>
@@ -50,6 +32,5 @@
         </div>
         {{/with}}
         {{/each}}
->>>>>>> Stashed changes
     </div>
 </form>

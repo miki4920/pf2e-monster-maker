@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16952765-5799-435e-9642-aa5dcaae8fff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/lib/apply_data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/lib/data/abilities.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module.json" beforeDir="false" afterPath="$PROJECT_DIR$/module.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/lib/apply_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/apply_data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/lib/data/abilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/data/abilities.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/lib/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/lib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/module.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +23,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-<<<<<<< Updated upstream
-=======
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -39,19 +35,12 @@
     <setting file="file://$PROJECT_DIR$/scripts/lib/data/abilities.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/lib/lib.js" root0="FORCE_HIGHLIGHTING" />
   </component>
->>>>>>> Stashed changes
   <component name="ProjectId" id="1t8EHVxsmFJ89eKMRQva7VKl80D" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-<<<<<<< Updated upstream
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-=======
     <property name="HbShouldOpenHtmlAsHb" value="enabled" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -60,7 +49,6 @@
     <property name="ejs.open.delimiter" value="&lt;%" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Templates" />
->>>>>>> Stashed changes
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -80,12 +68,9 @@
       <workItem from="1622142237495" duration="2022000" />
       <workItem from="1622217210084" duration="4041000" />
       <workItem from="1622305279337" duration="8051000" />
-<<<<<<< Updated upstream
-      <workItem from="1622374233780" duration="6363000" />
-=======
       <workItem from="1622374233780" duration="7219000" />
-      <workItem from="1622466992785" duration="7069000" />
->>>>>>> Stashed changes
+      <workItem from="1622466992785" duration="7664000" />
+      <workItem from="1622547946919" duration="6440000" />
     </task>
     <servers />
   </component>
@@ -104,11 +89,8 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-<<<<<<< Updated upstream
-=======
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
   </component>
->>>>>>> Stashed changes
 </project>
