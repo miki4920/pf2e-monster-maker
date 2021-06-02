@@ -1,13 +1,8 @@
-<<<<<<< Updated upstream
-import {abilities} from "./data/abilities.js"
-=======
 import {data} from "./data/abilities.js"
->>>>>>> Stashed changes
 
 export class ApplyData {
     constructor(actor, form_data) {
         this.actor = actor;
-        this.data = actor.data;
         this.form_data = form_data;
         this.level;
     }
@@ -21,11 +16,10 @@ export class ApplyData {
         if(!level) {
             return
         }
-        this.apply_abilities();
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
+        this.apply_values();
+        this.apply_hp();
+        this.apply_strikes();
+        this.apply_skills();
     }
 
     apply_name() {
@@ -58,26 +52,73 @@ export class ApplyData {
         }
     }
 
-    apply_abilities() {
-        let ability_names = Object.keys(abilities["abilities"]);
-<<<<<<< Updated upstream
-        this.actor.update({"data.abilities.str.mod": "100"});
-=======
->>>>>>> Stashed changes
-        for(var ability of ability_names) {
-            let dict = {}
-            let path = abilities["abilities"][ability]
-            dict[path] = abilities["scores"][this.level][this.form_data.get(ability)]
-            this.actor.update(dict);
+    apply_values() {
+        let keys = Object.keys(data["values"]);
+        for(let key of keys) {
+            this.apply_value(key);
         }
     }
-<<<<<<< Updated upstream
-=======
 
-    apply_perception() {
-        let dict = {}
-        let path = perception["path"]
-        dict[path] = perception["scores"][this.level][this.form_data.get("Perception")]
+    apply_value(key) {
+        let dictionary = {};
+        if (data["values"][key][0]) {
+            let path = data["values"][key][0];
+            let table = data[data["values"][key][1]];
+            dictionary[path] = table[this.level][this.form_data.get(key)];
+        }
+        this.actor.update(dictionary);
     }
->>>>>>> Stashed changes
+
+    apply_hp() {
+        let hp_table = data["hit_points"][this.level];
+        let hp = this.form_data.get("Hit Points");
+        hp = parseInt(hp_table[hp]);
+        let dictionary = {};
+        dictionary["data.attributes.hp.value"] = hp;
+        dictionary["data.attributes.hp.max"] = hp;
+        this.actor.update(dictionary);
+    }
+
+    apply_strikes() {
+        let strike_attack_bonus = data["strike_attack_bonus"][this.level];
+        strike_attack_bonus = parseInt(strike_attack_bonus[this.form_data.get("Strike Attack Bonus")]);
+        let strike_damage = data["strike_damage"][this.level];
+        strike_damage = strike_damage[this.form_data.get("Strike Damage")];
+        console.log(strike_damage)
+        let strike = {
+            name: 'New Strike',
+            type: 'melee',
+            data: {
+                damageRolls: [
+                    {
+                        damage: strike_damage,
+                    },
+                ],
+                bonus: {
+                    value: strike_attack_bonus,
+                },
+            },
+        };
+        this.actor.createOwnedItem(strike);
+    }
+
+    apply_skills() {
+        let skills = data["keys"]["Skills"];
+        for(let skill_name of skills) {
+            skill_name = skill_name["name"];
+            let skill_value = data["skills"][this.level][this.form_data.get(skill_name)];
+            if(skill_value) {
+                let skill_data = {
+                    name: skill_name,
+                    type: 'lore',
+                    data: {
+                        mod: {
+                            value: skill_value,
+                        },
+                    },
+                };
+                this.actor.createOwnedItem(skill_data);
+            }
+        }
+    }
 }

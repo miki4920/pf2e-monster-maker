@@ -1,4 +1,4 @@
-<form class="creature_builder">
+<form class="creature_builder" id="monster_maker">
     <div class="creature_builder_input">
         <label for="creature_name">Creature's Name<span>*</span></label>
         <input type="text" placeholder="Insert Creature's Name" name="creature_name" id="creature_name">
@@ -16,40 +16,25 @@
         </select>
     </div>
     <div class="creature_builder_input">
-<<<<<<< Updated upstream
-        {{#each template_abilities as |ability|}}
-        <label for={{ability}}>{{ability}}</label>
-        <div id={{ability}}>
-        <input type="radio" name={{ability}} id={{ability}}_extreme value="extreme">
-            <label for={{ability}}_extreme>Extreme</label>
-        <input type="radio" name={{ability}} id={{ability}}_high value="high">
-            <label for={{ability}}_high>High</label>
-
-        <input type="radio" name={{ability}} id={{ability}}_moderate value="moderate" checked>
-            <label for={{ability}}_moderate>Moderate</label>
-
-        <input type="radio" name={{ability}} id={{ability}}_low value="low">
-            <label for={{ability}}_low>Low</label>
-        </div>
-        {{/each}}
-
-=======
         {{#each template_keys as |dictionary|}}
-        {{#with dictionary as |key|}}
-        <label for="{{name}}">{{name}}</label>
-        <div id="{{name}}">
-            {{#each key.values as |value|}}
-            {{#if (equals value "moderate")}}
-            <input type="radio" name="{{key.name}}" id="{{key.name}}_{{value}}" value="{{value}}" checked>
-            <label for="{{key.name}}_{{value}}">{{upper_case value}}</label>
-            {{else}}
-            <input type="radio" name="{{key.name}}" id="{{key.name}}_{{value}}" value="{{value}}">
-            <label for="{{key.name}}_{{value}}">{{upper_case value}}</label>
-            {{/if}}
+            <div>
+            {{#each dictionary as |stat_list|}}
+                {{#with stat_list as |key|}}
+                    <label for="{{key.name}}"><h4>{{key.name}}</h4></label>
+                    <div id="{{key.name}}">
+                        {{#each key.values as |value|}}
+                            {{#if (equals value key.selected)}}
+                                <input type="radio" name="{{key.name}}" id="{{key.name}}_{{value}}" value="{{value}}" checked>
+                                <label for="{{key.name}}_{{value}}">{{upper_case value}}</label>
+                            {{else}}
+                                <input type="radio" name="{{key.name}}" id="{{key.name}}_{{value}}" value="{{value}}">
+                                <label for="{{key.name}}_{{value}}">{{upper_case value}}</label>
+                            {{/if}}
+                        {{/each}}
+                    </div>
+                {{/with}}
             {{/each}}
-        </div>
-        {{/with}}
+            </div>
         {{/each}}
->>>>>>> Stashed changes
     </div>
 </form>

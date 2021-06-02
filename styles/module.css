@@ -1,27 +1,31 @@
-form {
+#monster_maker {
     display: flex;
     flex-direction: column;
 }
 
-.creature_builder_input {
+#monster_maker .creature_builder_input {
     display: flex;
     flex-direction: column;
 }
 
 
-.creature_builder_input input[type="radio"] {
+#monster_maker .creature_builder_input input[type="radio"] {
     display: none;
 }
 
-.creature_builder_input div{
+#monster_maker .creature_builder_input div div{
     display: flex;
 }
 
-.creature_builder_input div label{
+#monster_maker .creature_builder_input div label{
     margin: 0 8px;
     cursor: pointer;
 }
 
-.creature_builder_input input[type="radio"]:checked+label {
+#monster_maker .creature_builder_input h4{
+    margin: 0 8px;
+}
+
+#monster_maker .creature_builder_input input[type="radio"]:checked+label {
     background-color: #bbb;
 }
