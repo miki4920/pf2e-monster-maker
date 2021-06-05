@@ -1,7 +1,11 @@
 export let data = {
     "keys":
-            {
-            "Ability Scores": [{"name": "Strength", "values": ["extreme", "high", "moderate", "low"], "selected": "moderate"},
+        {
+            "Ability Scores": [{
+                "name": "Strength",
+                "values": ["extreme", "high", "moderate", "low"],
+                "selected": "moderate"
+            },
                 {"name": "Dexterity", "values": ["extreme", "high", "moderate", "low"], "selected": "moderate"},
                 {"name": "Constitution", "values": ["extreme", "high", "moderate", "low"], "selected": "moderate"},
                 {"name": "Intelligence", "values": ["extreme", "high", "moderate", "low"], "selected": "moderate"},
@@ -9,11 +13,31 @@ export let data = {
                 {"name": "Charisma", "values": ["extreme", "high", "moderate", "low"], "selected": "moderate"}],
             "Main Statistics": [{"name": "Hit Points", "values": ["high", "moderate", "low"], "selected": "moderate"},
                 {"name": "Armor Class", "values": ["extreme", "high", "moderate", "low"], "selected": "moderate"},
-                {"name": "Perception", "values": ["extreme", "high", "moderate", "low", "terrible"], "selected": "moderate"}],
-            "Saving Throws": [{"name": "Fortitude", "values": ["extreme", "high", "moderate", "low", "terrible"], "selected": "moderate"},
-                {"name": "Reflex", "values": ["extreme", "high", "moderate", "low", "terrible"], "selected": "moderate"},
-                {"name": "Willpower", "values": ["extreme", "high", "moderate", "low", "terrible"], "selected": "moderate"}],
-            "Attacks": [{"name": "Strike Attack Bonus", "values": ["extreme", "high", "moderate", "low"], "selected": "moderate"},
+                {
+                    "name": "Perception",
+                    "values": ["extreme", "high", "moderate", "low", "terrible"],
+                    "selected": "moderate"
+                }],
+            "Saving Throws": [{
+                "name": "Fortitude",
+                "values": ["extreme", "high", "moderate", "low", "terrible"],
+                "selected": "moderate"
+            },
+                {
+                    "name": "Reflex",
+                    "values": ["extreme", "high", "moderate", "low", "terrible"],
+                    "selected": "moderate"
+                },
+                {
+                    "name": "Willpower",
+                    "values": ["extreme", "high", "moderate", "low", "terrible"],
+                    "selected": "moderate"
+                }],
+            "Attacks": [{
+                "name": "Strike Attack Bonus",
+                "values": ["extreme", "high", "moderate", "low"],
+                "selected": "moderate"
+            },
                 {"name": "Strike Damage", "values": ["extreme", "high", "moderate", "low"], "selected": "moderate"}],
             "Skills": [
                 {"name": "Acrobatics", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"},
@@ -35,20 +59,40 @@ export let data = {
             ]
         },
     "values": {
-        "Strength": ["data.abilities.str.mod", "abilities"],
-        "Dexterity": ["data.abilities.dex.mod", "abilities"],
-        "Constitution": ["data.abilities.con.mod", "abilities"],
-        "Intelligence": ["data.abilities.int.mod", "abilities"],
-        "Wisdom": ["data.abilities.wis.mod", "abilities"],
-        "Charisma": ["data.abilities.cha.mod", "abilities"],
-        "Hit Points": ["", "hit_points"],
-        "Armor Class": ["data.attributes.ac.base", "armor_class"],
-        "Perception": ["data.attributes.perception.base", "perception/saves"],
-        "Strike Attack Bonus": ["", "strike_attack_bonus"],
-        "Strike Damage": ["", "strike_damage"],
-        "Fortitude": ["data.saves.fortitude.base", "perception/saves"],
-        "Reflex": ["data.saves.reflex.base", "perception/saves"],
-        "Willpower": ["data.saves.will.base", "perception/saves"]
+        "fields": {
+            "Strength": ["data.abilities.str.mod", "abilities"],
+            "Dexterity": ["data.abilities.dex.mod", "abilities"],
+            "Constitution": ["data.abilities.con.mod", "abilities"],
+            "Intelligence": ["data.abilities.int.mod", "abilities"],
+            "Wisdom": ["data.abilities.wis.mod", "abilities"],
+            "Charisma": ["data.abilities.cha.mod", "abilities"],
+            "Hit Points": ["data.attributes.hp.value,data.attributes.hp.max", "hit_points"],
+            "Armor Class": ["data.attributes.ac.base", "armor_class"],
+            "Perception": ["data.attributes.perception.base", "perception/saves"],
+            "Fortitude": ["data.saves.fortitude.base", "perception/saves"],
+            "Reflex": ["data.saves.reflex.base", "perception/saves"],
+            "Willpower": ["data.saves.will.base", "perception/saves"]
+        },
+        "items": {
+            "Strike Attack Bonus": "strike_attack_bonus",
+            "Strike Damage": "strike_damage",
+            "Acrobatics": "skills",
+            "Arcana": "skills",
+            "Athletics": "skills",
+            "Crafting": "skills",
+            "Deception": "skills",
+            "Diplomacy": "skills",
+            "Intimidation": "skills",
+            "Medicine": "skills",
+            "Nature": "skills",
+            "Occultism": "skills",
+            "Performance": "skills",
+            "Religion": "skills",
+            "Society": "skills",
+            "Stealth": "skills",
+            "Survival": "skills",
+            "Thievery": "skills",
+        }
     },
     "abilities": {
         "-1": {

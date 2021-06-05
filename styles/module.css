@@ -3,29 +3,52 @@
     flex-direction: column;
 }
 
-#monster_maker .creature_builder_input {
+#monster_maker input[type="radio"] {
+    display: none;
+}
+
+#monster_maker .content{
     display: flex;
     flex-direction: column;
 }
 
-
-#monster_maker .creature_builder_input input[type="radio"] {
-    display: none;
-}
-
-#monster_maker .creature_builder_input div div{
-    display: flex;
-}
-
-#monster_maker .creature_builder_input div label{
+#monster_maker .button_label {
     margin: 0 8px;
     cursor: pointer;
 }
 
-#monster_maker .creature_builder_input h4{
+#monster_maker .creature_builder_input input[type="radio"]:checked+.button_label {
+    background-color: #bbb;
+}
+
+#monster_maker h4{
     margin: 0 8px;
 }
 
-#monster_maker .creature_builder_input input[type="radio"]:checked+label {
-    background-color: #bbb;
+#monster_maker .collapsible {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+#monster_maker .collapsible:after {
+    content: '\002B';
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+#monster_maker .active:after {
+    content: "\2212";
+}
+
+#monster_maker .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }

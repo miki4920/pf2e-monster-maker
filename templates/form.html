@@ -1,23 +1,24 @@
 <form class="creature_builder" id="monster_maker">
     <div class="creature_builder_input">
         <label for="creature_name">Creature's Name<span>*</span></label>
-        <input type="text" placeholder="Insert Creature's Name" name="creature_name" id="creature_name">
+        <input type="text" placeholder="Insert Creature's Name" name="creature_name" id="creature_name" value="">
     </div>
     <div class="creature_builder_input">
         <label for="creature_level">Level</label>
-        <input type="text" name="creature_level" value="-1" id="creature_level">
+        <input type="text" placeholder="-1" name="creature_level" value="" id="creature_level">
     </div>
     <div class="creature_builder_input">
         <label for="creature_roadmap">Road Map</label>
         <select name="creature_roadmap" id="creature_roadmap">
-            {{#each roadMaps as |roadMap|}}
-            <option>{{roadMap.name}}</option>
+            {{#each roadmaps as |roadmap|}}
+            <option>{{roadmap}}</option>
             {{/each}}
         </select>
     </div>
     <div class="creature_builder_input">
         {{#each template_keys as |dictionary|}}
-            <div>
+            <button type="button" class="collapsible">{{@key}}</button>
+            <div class="content">
             {{#each dictionary as |stat_list|}}
                 {{#with stat_list as |key|}}
                     <label for="{{key.name}}"><h4>{{key.name}}</h4></label>
@@ -25,10 +26,10 @@
                         {{#each key.values as |value|}}
                             {{#if (equals value key.selected)}}
                                 <input type="radio" name="{{key.name}}" id="{{key.name}}_{{value}}" value="{{value}}" checked>
-                                <label for="{{key.name}}_{{value}}">{{upper_case value}}</label>
+                                <label for="{{key.name}}_{{value}}" class="button_label">{{upper_case value}}</label>
                             {{else}}
                                 <input type="radio" name="{{key.name}}" id="{{key.name}}_{{value}}" value="{{value}}">
-                                <label for="{{key.name}}_{{value}}">{{upper_case value}}</label>
+                                <label for="{{key.name}}_{{value}}" class="button_label">{{upper_case value}}</label>
                             {{/if}}
                         {{/each}}
                     </div>
@@ -36,5 +37,9 @@
             {{/each}}
             </div>
         {{/each}}
+        <button type="button" class="collapsible">Traits</button>
+        <div class="content" id="monster_maker_traits">
+
+        </div>
     </div>
 </form>

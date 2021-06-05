@@ -1,4 +1,5 @@
 import {data} from "./data/abilities.js"
+import {get_name, get_level, get_fields, get_items, get_traits} from "./form_getters.js"
 
 export class ApplyData {
     constructor(actor, form_data) {
@@ -8,85 +9,52 @@ export class ApplyData {
     }
 
     apply_data() {
-        let name = this.apply_name();
-        if(!name) {
-            return
-        }
-        let level = this.apply_level();
-        if(!level) {
-            return
-        }
-        this.apply_values();
-        this.apply_hp();
-        this.apply_strikes();
+        this.apply_name();
+        this.apply_level();
+        this.apply_fields();
+        this.apply_attacks();
         this.apply_skills();
+        this.apply_traits();
     }
 
-    apply_name() {
-        let name = this.form_data.get("creature_name");
-        let regex = new RegExp("^[a-zA-Z0-9 ]*$");
-        if(name.length > 0 && regex.test(name)) {
-            this.actor.update({"name": name})
-            return true;
+    async apply_name() {
+        let name = get_name(this.form_data);
+        if (name) {
+            await this.actor.update({"name": name})
+            return;
         }
-        else if(name.length > 0) {
-            ui.notifications.error(`The character name must consist of alphanumeric chacters only.`);
-        }
+        ui.notifications.error(`The name is incorrect.`);
     }
 
-    apply_level() {
-        let level = this.form_data.get("creature_level");
-        if(isNaN(level)) {
-            ui.notifications.error(`The character level must be a number.`);
+    async apply_level() {
+        let level = get_level(this.form_data)
+        if (level) {
+            this.level = level
+            await this.actor.update({"data.details.level.value": level});
+            return;
         }
-        else {
-            level = parseInt(level);
-            if(-1 <= level && level <= 24) {
-                this.level = this.form_data.get("creature_level");
-                this.actor.update({"data.details.level.value": this.form_data.get("creature_level")});
-                return true;
-            }
-            else {
-                ui.notifications.error(`The character level must be between -1 and 24.`);
-            }
-        }
+        ui.notifications.error(`The character level must be a number between -1 and 24.`);
     }
 
-    apply_values() {
-        let keys = Object.keys(data["values"]);
-        for(let key of keys) {
-            this.apply_value(key);
-        }
-    }
-
-    apply_value(key) {
+    async apply_fields() {
+        let fields = get_fields(this.form_data);
         let dictionary = {};
-        if (data["values"][key][0]) {
-            let path = data["values"][key][0];
-            let table = data[data["values"][key][1]];
-            dictionary[path] = table[this.level][this.form_data.get(key)];
+        for (let key of Object.keys(fields)) {
+            let paths = data["values"]["fields"][key][0];
+            for (let path of paths.split(",")) {
+                let table = data[data["values"]["fields"][key][1]];
+                dictionary[path] = parseInt(table[this.level][fields[key]]);
+            }
         }
-        this.actor.update(dictionary);
+        await this.actor.update(dictionary);
     }
 
-    apply_hp() {
-        let hp_table = data["hit_points"][this.level];
-        let hp = this.form_data.get("Hit Points");
-        hp = parseInt(hp_table[hp]);
-        let dictionary = {};
-        dictionary["data.attributes.hp.value"] = hp;
-        dictionary["data.attributes.hp.max"] = hp;
-        this.actor.update(dictionary);
-    }
-
-    apply_strikes() {
-        let strike_attack_bonus = data["strike_attack_bonus"][this.level];
-        strike_attack_bonus = parseInt(strike_attack_bonus[this.form_data.get("Strike Attack Bonus")]);
-        let strike_damage = data["strike_damage"][this.level];
-        strike_damage = strike_damage[this.form_data.get("Strike Damage")];
-        console.log(strike_damage)
-        let strike = {
-            name: 'New Strike',
+    async apply_attacks() {
+        let attacks = get_items(this.form_data)
+        let strike_damage = data[data["values"]["items"]["Strike Damage"]][this.level][attacks["Strike Damage"]];
+        let strike_attack_bonus = parseInt(data[data["values"]["items"]["Strike Attack Bonus"]][this.level][attacks["Strike Attack Bonus"]]);
+        let attack = {
+            name: 'New Attack',
             type: 'melee',
             data: {
                 damageRolls: [
@@ -99,26 +67,35 @@ export class ApplyData {
                 },
             },
         };
-        this.actor.createOwnedItem(strike);
+        await this.actor.createOwnedItem(attack);
     }
 
-    apply_skills() {
-        let skills = data["keys"]["Skills"];
-        for(let skill_name of skills) {
-            skill_name = skill_name["name"];
-            let skill_value = data["skills"][this.level][this.form_data.get(skill_name)];
-            if(skill_value) {
-                let skill_data = {
-                    name: skill_name,
-                    type: 'lore',
-                    data: {
-                        mod: {
-                            value: skill_value,
+    async apply_skills() {
+        let skills = get_items(this.form_data);
+        for (let skill of Object.keys(skills)) {
+            if (!skill.includes("Strike")) {
+                let skill_value = parseInt(data[data["values"]["items"][skill]][this.level][skills[skill]])
+                if (skill_value) {
+                    let skill_data = {
+                        name: skill,
+                        type: 'lore',
+                        data: {
+                            mod: {
+                                value: skill_value,
+                            },
                         },
-                    },
-                };
-                this.actor.createOwnedItem(skill_data);
+                    };
+                    await this.actor.createOwnedItem(skill_data);
+                }
             }
+        }
+    }
+
+    async apply_traits() {
+        let traits = get_traits()
+        console.log(traits);
+        for (let trait of Object.values(traits)) {
+            await this.actor.createOwnedItem(trait);
         }
     }
 }
