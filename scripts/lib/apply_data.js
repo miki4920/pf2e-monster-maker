@@ -93,7 +93,6 @@ export class ApplyData {
 
     async apply_traits() {
         let traits = get_traits()
-        console.log(traits);
         for (let trait of Object.values(traits)) {
             await this.actor.createOwnedItem(trait);
         }

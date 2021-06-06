@@ -1,3 +1,5 @@
+import {apply_road_map} from "./road_maps.js"
+
 function equals(string_1, string_2) {
     return (string_1 === string_2);
 }
@@ -25,4 +27,11 @@ export function set_collapsibles() {
 export function apply_handlebars() {
     Handlebars.registerHelper('equals', equals);
     Handlebars.registerHelper('upper_case', upper_case)
+}
+
+export function create_apply_button() {
+    let button = document.getElementById("creature_roadmap_button")
+    button.addEventListener ("click", function() {
+        apply_road_map();
+    });
 }

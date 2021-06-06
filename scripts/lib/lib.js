@@ -1,6 +1,6 @@
 import {ApplyData} from "./apply_data.js"
 import {data} from "./data/abilities.js"
-import {apply_handlebars, set_collapsibles} from "./handlebars.js"
+import {apply_handlebars, set_collapsibles, create_apply_button} from "./handlebars.js"
 import {handle_drop} from "./on_drop.js"
 import {save_road_map} from "./road_maps.js"
 
@@ -55,6 +55,7 @@ async function create_dialog(actor) {
     })
     await dialog._render(true);
     set_collapsibles();
+    create_apply_button();
     new DragDrop({
         callbacks: {
             drop: handle_drop
