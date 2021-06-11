@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16952765-5799-435e-9642-aa5dcaae8fff" name="Default Changelist" comment="Refactored how abilities are handled. Added a form setter.">
+    <list default="true" id="16952765-5799-435e-9642-aa5dcaae8fff" name="Default Changelist" comment="Added applications for the templates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/apply_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/apply_data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/handlebars.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/handlebars.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/lib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/road_maps.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/road_maps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/lib/on_drop.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/on_drop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +77,9 @@
       <workItem from="1622715307349" duration="11986000" />
       <workItem from="1622832806195" duration="877000" />
       <workItem from="1622898464197" duration="11534000" />
-      <workItem from="1622984329229" duration="2280000" />
+      <workItem from="1622984329229" duration="2393000" />
+      <workItem from="1623334764966" duration="365000" />
+      <workItem from="1623420397441" duration="2079000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored how abilities are handled. Added a form setter.">
       <created>1622920959103</created>
@@ -89,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622920959103</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added applications for the templates">
+      <created>1622986650204</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1622986650204</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,7 +115,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactored how abilities are handled. Added a form setter." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored how abilities are handled. Added a form setter." />
+    <MESSAGE value="Added applications for the templates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added applications for the templates" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

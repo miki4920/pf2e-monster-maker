@@ -11,6 +11,9 @@ export function handle_drop(event) {
         button.remove();
     });
     let traits = document.getElementById("monster_maker_traits")
-    traits.appendChild(paragraph)
-    traits.appendChild(button)
+    let div = document.createElement("div")
+    div.classList.add("traits")
+    div.appendChild(paragraph)
+    div.appendChild(button)
+    traits.appendChild(div)
 }
