@@ -8,13 +8,13 @@ export class ApplyData {
         this.level;
     }
 
-    apply_data() {
-        this.apply_name();
-        this.apply_level();
-        this.apply_fields();
-        this.apply_attacks();
-        this.apply_skills();
-        this.apply_traits();
+    async apply_data() {
+        await this.apply_name();
+        await this.apply_level();
+        await this.apply_fields();
+        await this.apply_attacks();
+        await this.apply_skills();
+        await this.apply_traits();
     }
 
     async apply_name() {
@@ -67,7 +67,7 @@ export class ApplyData {
                 },
             },
         };
-        await this.actor.createEmbeddedDocuments("Item", [attack]);
+       await Item.create(attack, {parent: this.actor});
     }
 
     async apply_skills() {
@@ -85,7 +85,7 @@ export class ApplyData {
                             },
                         },
                     };
-                    await this.actor.createEmbeddedDocuments("Item", [skill_data]);
+                    await Item.create(skill_data, {parent: this.actor});
                 }
             }
         }
@@ -94,7 +94,7 @@ export class ApplyData {
     async apply_traits() {
         let traits = get_traits()
         for (let trait of Object.values(traits)) {
-            await this.actor.createEmbeddedDocuments("Item", [trait]);
+            await Item.create(trait, {parent: this.actor});
         }
     }
 }

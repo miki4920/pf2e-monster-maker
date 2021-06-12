@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16952765-5799-435e-9642-aa5dcaae8fff" name="Default Changelist" comment="Changed the way traits are handled to make them removable upon click">
-      <change afterPath="$PROJECT_DIR$/scripts/lib/roadmap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/lib/trait.js" afterDir="false" />
+    <list default="true" id="16952765-5799-435e-9642-aa5dcaae8fff" name="Default Changelist" comment="Converted project to 0.8.6. Changed local storage to a world based storage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module.json" beforeDir="false" afterPath="$PROJECT_DIR$/module.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/lib/apply_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/apply_data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/form_getters.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/form_getters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/handlebars.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/handlebars.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/lib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/on_drop.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/road_maps.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/module.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +29,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/scripts/lib/roadmap.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/lib/data/abilities.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/lib/form_getters.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/lib/apply_data.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts/lib/lib.js" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -98,7 +89,8 @@
       <workItem from="1623334764966" duration="365000" />
       <workItem from="1623420397441" duration="2686000" />
       <workItem from="1623496283472" duration="1459000" />
-      <workItem from="1623500493098" duration="12437000" />
+      <workItem from="1623500493098" duration="12646000" />
+      <workItem from="1623534092558" duration="828000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored how abilities are handled. Added a form setter.">
       <created>1622920959103</created>
@@ -135,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623504231314</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Converted project to 0.8.6. Changed local storage to a world based storage">
+      <created>1623529799860</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1623529799860</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,7 +158,8 @@
     <MESSAGE value="Changed the look of CSS" />
     <MESSAGE value="Converted Roadmaps from dropdown into a Radio buttons. Added an instant roadmap application" />
     <MESSAGE value="Changed the way traits are handled to make them removable upon click" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed the way traits are handled to make them removable upon click" />
+    <MESSAGE value="Converted project to 0.8.6. Changed local storage to a world based storage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Converted project to 0.8.6. Changed local storage to a world based storage" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
