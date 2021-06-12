@@ -5,7 +5,7 @@
         <label for="creature_level">Level</label>
         <input type="text" placeholder="-1" name="creature_level" value="" id="creature_level">
         <button type="button" class="collapsible">Road Maps</button>
-        <div class="content">
+        <div class="content" id="roadmaps">
             {{#each roadmaps as |roadmap|}}
                 <input type="radio" name="creature_roadmap" value="{{roadmap}}" id="{{underscore roadmap}}">
                 <label for="{{underscore roadmap}}" class="button_label">{{upper_case roadmap}}</label>
@@ -16,7 +16,7 @@
             <div class="content">
             {{#each dictionary as |stat_list|}}
                 {{#with stat_list as |key|}}
-                    <label for="{{key.name}}"><h4>{{key.name}}</h4></label>
+                    <h4><label for="{{key.name}}">{{key.name}}</label></h4>
                     <div id="{{key.name}}">
                         {{#each key.values as |value|}}
                             {{#if (equals value key.selected)}}

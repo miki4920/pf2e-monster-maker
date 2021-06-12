@@ -67,7 +67,7 @@ export class ApplyData {
                 },
             },
         };
-        await this.actor.createOwnedItem(attack);
+        await this.actor.createEmbeddedDocuments("Item", [attack]);
     }
 
     async apply_skills() {
@@ -85,7 +85,7 @@ export class ApplyData {
                             },
                         },
                     };
-                    await this.actor.createOwnedItem(skill_data);
+                    await this.actor.createEmbeddedDocuments("Item", [skill_data]);
                 }
             }
         }
@@ -94,7 +94,7 @@ export class ApplyData {
     async apply_traits() {
         let traits = get_traits()
         for (let trait of Object.values(traits)) {
-            await this.actor.createOwnedItem(trait);
+            await this.actor.createEmbeddedDocuments("Item", [trait]);
         }
     }
 }

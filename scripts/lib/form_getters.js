@@ -1,4 +1,5 @@
 import {data} from "./data/abilities.js"
+import {Trait} from "./trait.js"
 
 export function get_name(form) {
     let name = form.get("creature_name");
@@ -42,11 +43,9 @@ export function get_items(form) {
 
 export function get_traits() {
     let traits_dictionary = {}
-    let traits = Object.keys(localStorage);
+    let traits = Trait.getItems()
     for(let trait of traits) {
-        if (trait.includes("monster_maker")) {
-            traits_dictionary[trait.split(".")[1]] = JSON.parse(localStorage.getItem(trait));
-        }
+        traits_dictionary[trait] = Trait.getItem(trait);
     }
     return traits_dictionary
 }

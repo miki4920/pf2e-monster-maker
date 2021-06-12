@@ -1,4 +1,4 @@
-import {apply_road_map} from "./road_maps.js"
+import {apply_road_map} from "./roadmap.js"
 
 function equals(string_1, string_2) {
     return (string_1 === string_2);

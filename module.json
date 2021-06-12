@@ -26,9 +26,9 @@
     "/scripts/lib/apply_data.js",
     "/scripts/lib/data/abilities.js",
     "/scripts/lib/handlebars.js",
-    "/scripts/lib/on_drop.js",
     "/scripts/lib/form_getters.js",
-    "/scripts/lib/road_maps.js"
+    "/scripts/lib/roadmap.js",
+    "/scripts/lib/trait.js"
   ],
   "scripts": [
   ],

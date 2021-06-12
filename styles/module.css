@@ -43,4 +43,18 @@
     transition: max-height 0.2s ease-out;
 }
 
+#monster_maker #roadmaps {
+    display: flex;
+    flex-direction: column;
+}
+
+#monster_maker #roadmaps label {
+    width: 100%;
+    font-size: 1em;
+}
+
+#monster_maker #monster_maker_traits {
+    margin: 0 8px;
+}
+
 
