@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16952765-5799-435e-9642-aa5dcaae8fff" name="Default Changelist" comment="Added applications for the templates">
+    <list default="true" id="16952765-5799-435e-9642-aa5dcaae8fff" name="Default Changelist" comment="Changed the look of CSS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/on_drop.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/on_drop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/lib/handlebars.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/handlebars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/lib/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/lib/road_maps.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/road_maps.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +82,9 @@
       <workItem from="1622898464197" duration="11534000" />
       <workItem from="1622984329229" duration="2393000" />
       <workItem from="1623334764966" duration="365000" />
-      <workItem from="1623420397441" duration="2079000" />
+      <workItem from="1623420397441" duration="2686000" />
+      <workItem from="1623496283472" duration="1459000" />
+      <workItem from="1623500493098" duration="1960000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored how abilities are handled. Added a form setter.">
       <created>1622920959103</created>
@@ -95,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622986650204</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Changed the look of CSS">
+      <created>1623422529897</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1623422529897</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,7 +128,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactored how abilities are handled. Added a form setter." />
     <MESSAGE value="Added applications for the templates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added applications for the templates" />
+    <MESSAGE value="Changed the look of CSS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the look of CSS" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

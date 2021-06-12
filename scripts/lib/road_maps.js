@@ -12,14 +12,12 @@ export function save_road_map(form) {
     road_map_dictionary["Selections"] = selections;
     road_map_dictionary["Traits"] = get_traits();
     road_maps_dictionary[get_name(form)] = road_map_dictionary;
-    console.log(road_map_dictionary)
     localStorage.setItem("roadmaps", JSON.stringify(road_maps_dictionary));
 }
 
-export function apply_road_map() {
-    let road_map_name = document.getElementById("creature_roadmap").value;
+export function apply_road_map(roadmap) {
     let road_maps_dictionary = JSON.parse(localStorage.getItem("roadmaps"));
-    let road_map = road_maps_dictionary[road_map_name];
+    let road_map = road_maps_dictionary[roadmap];
     for(let id of road_map["Selections"]) {
         document.getElementById(id).checked = true;
     }

@@ -1,15 +1,5 @@
-#monster_maker {
-    display: flex;
-    flex-direction: column;
-}
-
 #monster_maker input[type="radio"] {
     display: none;
-}
-
-#monster_maker .content{
-    display: flex;
-    flex-direction: column;
 }
 
 #monster_maker .button_label {
@@ -65,7 +55,6 @@
 #monster_maker .traits p{
     width: 100%;
     margin: 0;
-
 }
 
 #monster_maker .traits button {

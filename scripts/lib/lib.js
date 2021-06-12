@@ -1,11 +1,11 @@
 import {ApplyData} from "./apply_data.js"
 import {data} from "./data/abilities.js"
-import {apply_handlebars, set_collapsibles, create_apply_button} from "./handlebars.js"
+import {apply_handlebars, set_collapsibles, set_apply_button} from "./handlebars.js"
 import {handle_drop} from "./on_drop.js"
 import {save_road_map} from "./road_maps.js"
 
 function check_sheet(actor, element) {
-    if (!(actor.data.type === 'npc' && actor.can(game.user, 'update'))) {
+    if (!(actor.data.type === 'npc' && actor.canUserModify(game.user, 'update'))) {
         return true;
     }
     if (element.length !== 1) {
@@ -26,14 +26,15 @@ async function create_dialog(actor) {
     let template_keys = data["keys"];
     let roadmaps = localStorage.getItem("roadmaps");
     if(!roadmaps) {
-        roadmaps = {};
-        localStorage.setItem("roadmaps", JSON.stringify(roadmaps))
+        roadmaps = JSON.stringify({});
+        localStorage.setItem("roadmaps", roadmaps)
     }
+    roadmaps = Object.keys(JSON.parse(roadmaps))
     let dialog = new Dialog({
         content: await renderTemplate("modules/foundryvtt-pf2e-monster-maker/templates/form.html",
             {
                 "template_keys": template_keys,
-                "roadmaps": Object.keys(JSON.parse(roadmaps))
+                "roadmaps": roadmaps
             }),
         buttons: {
             submit: {
@@ -55,7 +56,7 @@ async function create_dialog(actor) {
     })
     await dialog._render(true);
     set_collapsibles();
-    create_apply_button();
+    set_apply_button(roadmaps);
     new DragDrop({
         callbacks: {
             drop: handle_drop

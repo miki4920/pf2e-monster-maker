@@ -2,21 +2,15 @@
     <div class="creature_builder_input">
         <label for="creature_name">Creature's Name<span>*</span></label>
         <input type="text" placeholder="Insert Creature's Name" name="creature_name" id="creature_name" value="">
-    </div>
-    <div class="creature_builder_input">
         <label for="creature_level">Level</label>
         <input type="text" placeholder="-1" name="creature_level" value="" id="creature_level">
-    </div>
-    <div class="creature_builder_input">
-        <label for="creature_roadmap">Road Map</label>
-        <select name="creature_roadmap" id="creature_roadmap">
+        <button type="button" class="collapsible">Road Maps</button>
+        <div class="content">
             {{#each roadmaps as |roadmap|}}
-            <option>{{roadmap}}</option>
+                <input type="radio" name="creature_roadmap" value="{{roadmap}}" id="{{underscore roadmap}}">
+                <label for="{{underscore roadmap}}" class="button_label">{{upper_case roadmap}}</label>
             {{/each}}
-        </select>
-        <button type="button" id="creature_roadmap_button">Apply Roadmap</button>
-    </div>
-    <div class="creature_builder_input">
+        </div>
         {{#each template_keys as |dictionary|}}
             <button type="button" class="collapsible">{{@key}}</button>
             <div class="content">
@@ -40,7 +34,6 @@
         {{/each}}
         <button type="button" class="collapsible">Traits</button>
         <div class="content" id="monster_maker_traits">
-
         </div>
     </div>
 </form>
