@@ -15,26 +15,33 @@ export function save_road_map(form) {
     localStorage.setItem("roadmaps", JSON.stringify(road_maps_dictionary));
 }
 
+export function remove_traits() {
+    let traits = Object.keys(localStorage);
+    for(let trait of traits) {
+        if(trait.includes("monster_maker")) {
+            localStorage.removeItem(trait);
+        }
+    }
+    let window_traits = document.getElementById("monster_maker_traits")
+    window_traits.innerHTML = "";
+}
+
 export function apply_road_map(roadmap) {
     let road_maps_dictionary = JSON.parse(localStorage.getItem("roadmaps"));
     let road_map = road_maps_dictionary[roadmap];
     for(let id of road_map["Selections"]) {
         document.getElementById(id).checked = true;
     }
+    remove_traits();
     let traits = road_map["Traits"];
     for(let trait of Object.values(traits)) {
         localStorage.setItem("monster_maker."+trait["name"], JSON.stringify(trait));
         let paragraph = document.createElement("p");
         paragraph.innerText = trait["name"];
-        let button = document.createElement("button")
-        button.innerHTML = "Delete";
-        button.addEventListener ("click", function() {
+        paragraph.addEventListener("click", function() {
             localStorage.removeItem("monster_maker."+trait["name"]);
             paragraph.remove();
-            button.remove();
         });
-        let traits = document.getElementById("monster_maker_traits")
-        traits.appendChild(paragraph)
-        traits.appendChild(button)
+        window_traits.appendChild(paragraph)
     }
 }

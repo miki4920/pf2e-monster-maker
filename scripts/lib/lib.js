@@ -2,7 +2,7 @@ import {ApplyData} from "./apply_data.js"
 import {data} from "./data/abilities.js"
 import {apply_handlebars, set_collapsibles, set_apply_button} from "./handlebars.js"
 import {handle_drop} from "./on_drop.js"
-import {save_road_map} from "./road_maps.js"
+import {save_road_map, remove_traits} from "./road_maps.js"
 
 function check_sheet(actor, element) {
     if (!(actor.data.type === 'npc' && actor.canUserModify(game.user, 'update'))) {
@@ -10,15 +10,6 @@ function check_sheet(actor, element) {
     }
     if (element.length !== 1) {
         return true;
-    }
-}
-
-function remove_traits() {
-    let traits = Object.keys(localStorage);
-    for(let trait of traits) {
-        if(trait.includes("monster_maker")) {
-            localStorage.removeItem(trait);
-        }
     }
 }
 
