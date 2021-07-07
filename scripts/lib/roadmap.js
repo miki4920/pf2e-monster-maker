@@ -21,6 +21,12 @@ export class Roadmap {
         let roadmaps = game.settings.get("foundryvtt-pf2e-monster-maker", "roadmaps");
         return roadmaps[item];
     }
+
+    static deleteItem(item) {
+        let roadmaps = game.settings.get("foundryvtt-pf2e-monster-maker", "roadmaps");
+        delete roadmaps[item]
+        game.settings.set("foundryvtt-pf2e-monster-maker", "roadmaps", roadmaps);
+    }
 }
 
 export function handle_drop(event) {
@@ -57,4 +63,8 @@ export function apply_road_map(roadmap) {
         Trait.setItem(item, data);
         Trait.setItemInHTML(item);
     }
+}
+
+export function delete_road_map(roadmap) {
+    Roadmap.deleteItem(roadmap);
 }

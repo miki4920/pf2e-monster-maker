@@ -1,4 +1,4 @@
-import {apply_road_map} from "./roadmap.js"
+import {apply_road_map, delete_road_map} from "./roadmap.js"
 
 function equals(string_1, string_2) {
     return (string_1 === string_2);
@@ -28,10 +28,19 @@ export function set_collapsibles() {
     }
 }
 
-export function set_apply_button(roadmaps) {
-    for(let roadmap of roadmaps) {
-        $("#"+underscore(roadmap)).click(function() {apply_road_map(roadmap)});
-    }
+export function set_apply_button() {
+    $('#roadmaps label').mousedown(function(event) {
+        let roadmap = $(this).attr('for');
+        switch (event.which) {
+            case 1:
+                apply_road_map(roadmap);
+                break;
+            case 3:
+                delete_road_map(roadmap);
+                $(this).remove();
+                break;
+        }
+    })
 }
 
 export function apply_handlebars() {

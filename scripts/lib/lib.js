@@ -42,7 +42,7 @@ async function create_dialog(actor) {
     Trait.removeItems();
     Trait.removeItemsInHTML();
     set_collapsibles();
-    set_apply_button(roadmaps);
+    set_apply_button();
     new DragDrop({
         callbacks: {
             drop: handle_drop

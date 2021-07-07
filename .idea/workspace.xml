@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16952765-5799-435e-9642-aa5dcaae8fff" name="Default Changelist" comment="Converted project to 0.8.6. Changed local storage to a world based storage">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/apply_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/apply_data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/lib/handlebars.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/handlebars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/lib/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/lib/roadmap.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/roadmap.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +94,7 @@
       <workItem from="1623496283472" duration="1459000" />
       <workItem from="1623500493098" duration="12646000" />
       <workItem from="1623534092558" duration="828000" />
+      <workItem from="1625673580097" duration="1596000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored how abilities are handled. Added a form setter.">
       <created>1622920959103</created>
