@@ -21,11 +21,10 @@
                         {{#each key.values as |value|}}
                             {{#if (equals value key.selected)}}
                                 <input type="radio" name="{{key.name}}" id="{{key.name}}_{{value}}" value="{{value}}" checked>
-                                <label for="{{key.name}}_{{value}}" class="button_label">{{upper_case value}}</label>
                             {{else}}
                                 <input type="radio" name="{{key.name}}" id="{{key.name}}_{{value}}" value="{{value}}">
-                                <label for="{{key.name}}_{{value}}" class="button_label">{{upper_case value}}</label>
                             {{/if}}
+                            <label for="{{key.name}}_{{value}}" class="button_label">{{upper_case value}}</label>
                         {{/each}}
                     </div>
                 {{/with}}

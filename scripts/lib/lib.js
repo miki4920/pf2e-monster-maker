@@ -1,14 +1,10 @@
 import {ApplyData} from "./apply_data.js"
 import {data} from "./data/abilities.js"
-import {apply_handlebars, set_collapsibles, set_apply_button} from "./handlebars.js"
+import {apply_handlebars, apply_jquery} from "./handlebars.js"
 import {Roadmap, save_road_map, handle_drop} from "./roadmap.js"
-import {Trait} from "./trait.js"
 
 function check_sheet(actor, element) {
     if (actor.data.type === 'npc' && actor.canUserModify(game.user, 'update')) {
-        return true;
-    }
-    if (element.length === 1) {
         return true;
     }
 }
@@ -39,10 +35,7 @@ async function create_dialog(actor) {
         }
     })
     await dialog._render(true);
-    Trait.removeItems();
-    Trait.removeItemsInHTML();
-    set_collapsibles();
-    set_apply_button();
+    apply_jquery();
     new DragDrop({
         callbacks: {
             drop: handle_drop
@@ -56,8 +49,8 @@ export function creature_builder_button(sheet, html) {
     let element = html.find('.window-header .window-title');
     if (check_sheet(actor, element)) {
         let button = $(`<a class="popout" style><i class="fas fa-book"></i>Monster Maker</a>`);
-        apply_handlebars();
         button.on('click', function () {
+            apply_handlebars();
             create_dialog(actor)
         });
         element.after(button);

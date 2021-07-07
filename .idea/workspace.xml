@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16952765-5799-435e-9642-aa5dcaae8fff" name="Default Changelist" comment="Converted project to 0.8.6. Changed local storage to a world based storage">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+    <list default="true" id="16952765-5799-435e-9642-aa5dcaae8fff" name="Default Changelist" comment="Added an option to remove road maps with right click">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/lib/handlebars.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/handlebars.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/lib/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/lib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/roadmap.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/roadmap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,7 @@
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../../Program Files/FoundryVTT/resources/app/main.js" />
     <property name="nodejs_interpreter_path" value="node" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Templates" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -94,7 +93,7 @@
       <workItem from="1623496283472" duration="1459000" />
       <workItem from="1623500493098" duration="12646000" />
       <workItem from="1623534092558" duration="828000" />
-      <workItem from="1625673580097" duration="1596000" />
+      <workItem from="1625673580097" duration="3724000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored how abilities are handled. Added a form setter.">
       <created>1622920959103</created>
@@ -138,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623529799860</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added an option to remove road maps with right click">
+      <created>1625675260415</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1625675260415</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +169,8 @@
     <MESSAGE value="Converted Roadmaps from dropdown into a Radio buttons. Added an instant roadmap application" />
     <MESSAGE value="Changed the way traits are handled to make them removable upon click" />
     <MESSAGE value="Converted project to 0.8.6. Changed local storage to a world based storage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Converted project to 0.8.6. Changed local storage to a world based storage" />
+    <MESSAGE value="Added an option to remove road maps with right click" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added an option to remove road maps with right click" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

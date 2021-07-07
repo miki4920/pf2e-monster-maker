@@ -1,4 +1,5 @@
 import {apply_road_map, delete_road_map} from "./roadmap.js"
+import {Trait} from "./trait.js"
 
 function equals(string_1, string_2) {
     return (string_1 === string_2);
@@ -12,7 +13,7 @@ function underscore(string) {
     return string.replace(" ", "_");
 }
 
-export function set_collapsibles() {
+function set_collapsibles() {
     let coll = document.getElementsByClassName("collapsible");
     let i;
     for (i = 0; i < coll.length; i++) {
@@ -28,7 +29,7 @@ export function set_collapsibles() {
     }
 }
 
-export function set_apply_button() {
+function set_roadmaps_events() {
     $('#roadmaps label').mousedown(function(event) {
         let roadmap = $(this).attr('for');
         switch (event.which) {
@@ -47,4 +48,11 @@ export function apply_handlebars() {
     Handlebars.registerHelper('equals', equals);
     Handlebars.registerHelper('upper_case', upper_case)
     Handlebars.registerHelper('underscore', underscore)
+}
+
+export function apply_jquery() {
+    set_collapsibles();
+    set_roadmaps_events();
+    Trait.removeItems();
+    Trait.removeItemsInHTML();
 }
