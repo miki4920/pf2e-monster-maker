@@ -1,9 +1,9 @@
 import {ApplyData} from "./apply_data.js"
 import {data} from "./data/abilities.js"
 import {apply_handlebars, apply_jquery} from "./handlebars.js"
-import {Roadmap, save_road_map, handle_drop} from "./roadmap.js"
+import {get_roadmaps_name, roadmap, handle_drop} from "./roadmap.js"
 
-function check_sheet(actor, element) {
+function check_sheet(actor) {
     if (actor.data.type === 'npc' && actor.canUserModify(game.user, 'update')) {
         return true;
     }
@@ -11,12 +11,13 @@ function check_sheet(actor, element) {
 
 async function create_dialog(actor) {
     let template_keys = data["keys"];
-    let roadmaps = Roadmap.getItems()
+    let roadmaps = get_roadmaps_name();
     let dialog = new Dialog({
         content: await renderTemplate("modules/foundryvtt-pf2e-monster-maker/templates/form.html",
             {
                 "template_keys": template_keys,
-                "roadmaps": roadmaps
+                "roadmaps": roadmaps,
+                "name": actor.name
             }),
         buttons: {
             submit: {
@@ -29,7 +30,7 @@ async function create_dialog(actor) {
             save: {
                 label: "Save Roadmap", callback: (html) => {
                     const results = new FormData(html.find("form")[0])
-                    save_road_map(results);
+                    roadmap(results);
                 }
             }
         }
@@ -62,13 +63,13 @@ export async function register_settings() {
         scope: 'world',
         config: false,
         type: Object,
-        default: {}
+        default: []
     });
 
     await game.settings.register("foundryvtt-pf2e-monster-maker", "traits", {
         scope: 'client',
         config: false,
         type: Object,
-        default: {}
+        default: []
     });
 }

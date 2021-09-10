@@ -2,18 +2,18 @@ import {data} from "./data/abilities.js"
 import {Trait} from "./trait.js"
 
 export function get_name(form) {
-    let name = form.get("creature_name");
+    let name = form.get("name") || "template";
     let regex = new RegExp("^[a-zA-Z0-9 ]*$");
     if(name.length > 0 && regex.test(name)) {
+        name = name.toLowerCase();
+        name = name.split(" ").join("_");
         return name;
     }
-    else {
-        return false;
-    }
+    return false;
 }
 
 export function get_level(form) {
-    let level = form.get("creature_level");
+    let level = form.get("level") || "-1";
     if(!isNaN(level)) {
         level = parseInt(level);
         if (-1 <= level && level <= 24) {

@@ -17,6 +17,7 @@ export class Trait {
         let traits = game.settings.get("foundryvtt-pf2e-monster-maker", "traits");
         traits[item] = data;
         game.settings.set("foundryvtt-pf2e-monster-maker", "traits", traits);
+        this.setItemInHTML(item);
     }
 
     static setItemInHTML(item) {
@@ -32,6 +33,7 @@ export class Trait {
 
     static removeItems() {
         game.settings.set("foundryvtt-pf2e-monster-maker", "traits", {});
+        this.removeItemsInHTML();
     }
 
     static removeItemsInHTML() {
