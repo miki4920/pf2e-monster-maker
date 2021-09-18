@@ -9,9 +9,8 @@
   "compatibleCoreVersion": "0.8.9",
   "authors": [
     {
-      "name": "The League of Extraordinary FVTT Developers",
-      "url": "https://github.com/League-of-Foundry-Developers",
-      "discord": "discordID#0001"
+      "name": "miki4920",
+      "url": "https://github.com/miki4920",
     }
   ],
   "dependencies": [
