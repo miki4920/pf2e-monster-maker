@@ -1,7 +1,7 @@
 import {ApplyData} from "./apply_data.js"
 import {data} from "./data/abilities.js"
 import {apply_handlebars, apply_jquery} from "./handlebars.js"
-import {get_roadmaps_name, roadmap, handle_drop} from "./roadmap.js"
+import {get_roadmaps_name, roadmap, handle_drop, save_templates} from "./roadmap.js"
 
 function check_sheet(actor) {
     if (actor.data.type === 'npc' && actor.canUserModify(game.user, 'update')) {
@@ -65,6 +65,10 @@ export async function register_settings() {
         type: Object,
         default: []
     });
+
+    if(game.settings.get("foundryvtt-pf2e-monster-maker", "roadmaps").length === 0) {
+        save_templates();
+    }
 
     await game.settings.register("foundryvtt-pf2e-monster-maker", "traits", {
         scope: 'client',

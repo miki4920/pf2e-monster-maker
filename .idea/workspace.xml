@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="febb3016-758d-45aa-b041-c0f54cae3697" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/lib/data/templates.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/lib/helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+    <list default="true" id="febb3016-758d-45aa-b041-c0f54cae3697" name="Default Changelist" comment="Started work on default templates">
+      <change afterPath="$PROJECT_DIR$/scripts/lib/data/templates.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/apply_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/apply_data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/form_getters.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/form_getters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/handlebars.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/handlebars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module.json" beforeDir="false" afterPath="$PROJECT_DIR$/module.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/lib/data/templates.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/lib/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/lib.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/lib/roadmap.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/roadmap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/trait.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/trait.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +49,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1631285860778</updated>
-      <workItem from="1631285865317" duration="8178000" />
+      <workItem from="1631285865317" duration="8668000" />
+      <workItem from="1631793789836" duration="885000" />
+      <workItem from="1631964582950" duration="3048000" />
     </task>
+    <task id="LOCAL-00001" summary="Started work on default templates">
+      <created>1631297396155</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631297396155</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -72,5 +76,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Started work on default templates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started work on default templates" />
   </component>
 </project>

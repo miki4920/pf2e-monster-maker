@@ -1,13 +1,14 @@
-import {get_name,get_traits} from "./form_getters.js"
+import {get_name, get_traits} from "./form_getters.js"
 import {Trait} from "./trait.js"
+import {templates} from "./data/templates.js";
 
 
 function get_roadmaps_object() {
-    return game.settings.get("foundryvtt-pf2e-monster-maker", "roadmaps");
+    return game.settings.get("foundryvtt-pf2e-monster-maker", "roadmaps")
 }
 
 export function get_roadmaps_name() {
-    return get_roadmaps_object().map(roadmap => roadmap["name"]);
+    return get_roadmaps_object().map(roadmap => roadmap["name"]).sort();
 }
 
 function get_roadmap(name) {
@@ -15,15 +16,21 @@ function get_roadmap(name) {
     return roadmaps.find(element => element["name"] === name);
 }
 
-function save_roadmap(roadmap) {
+async function save_roadmap(roadmap) {
     let roadmaps = get_roadmaps_object();
     roadmaps.push(roadmap)
-    game.settings.set("foundryvtt-pf2e-monster-maker", "roadmaps", roadmaps);
+    await game.settings.set("foundryvtt-pf2e-monster-maker", "roadmaps", roadmaps);
+}
+
+export async function save_templates() {
+    let roadmaps = get_roadmaps_object();
+    templates.forEach(element => roadmaps.push(element))
+    await game.settings.set("foundryvtt-pf2e-monster-maker", "roadmaps", roadmaps);
 }
 
 export function delete_roadmap(name) {
     let roadmaps = get_roadmaps_object();
-    roadmaps = roadmaps.filter(element => element["name"] === name);
+    roadmaps = roadmaps.filter(element => element["name"] !== name);
     game.settings.set("foundryvtt-pf2e-monster-maker", "roadmaps", roadmaps);
 }
 
