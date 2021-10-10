@@ -8,7 +8,9 @@ function get_roadmaps_object() {
 }
 
 export function get_roadmaps_name() {
-    return get_roadmaps_object().map(roadmap => roadmap["name"]).sort();
+    let roadmaps = get_roadmaps_object();
+    roadmaps = roadmaps.map(roadmap => roadmap["name"]).sort();
+    return roadmaps
 }
 
 function get_roadmap(name) {

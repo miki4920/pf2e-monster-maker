@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="febb3016-758d-45aa-b041-c0f54cae3697" name="Default Changelist" comment="Started work on default templates">
-      <change afterPath="$PROJECT_DIR$/scripts/lib/data/templates.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module.json" beforeDir="false" afterPath="$PROJECT_DIR$/module.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/data/templates.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/lib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lib/roadmap.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/roadmap.js" afterDir="false" />
-    </list>
+    <list default="true" id="febb3016-758d-45aa-b041-c0f54cae3697" name="Default Changelist" comment="Updated Roadmap handling" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +27,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../foundryvtt-battlemaps-integration" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -51,7 +45,10 @@
       <updated>1631285860778</updated>
       <workItem from="1631285865317" duration="8668000" />
       <workItem from="1631793789836" duration="885000" />
-      <workItem from="1631964582950" duration="3048000" />
+      <workItem from="1631964582950" duration="3297000" />
+      <workItem from="1633197473080" duration="1005000" />
+      <workItem from="1633198520224" duration="13000" />
+      <workItem from="1633884027472" duration="77000" />
     </task>
     <task id="LOCAL-00001" summary="Started work on default templates">
       <created>1631297396155</created>
@@ -60,7 +57,21 @@
       <option name="project" value="LOCAL" />
       <updated>1631297396155</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implemented pathfinder creature templates">
+      <created>1631968242827</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631968242827</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Updated Roadmap handling">
+      <created>1633884053181</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1633884053181</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -80,6 +91,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Started work on default templates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started work on default templates" />
+    <MESSAGE value="Implemented pathfinder creature templates" />
+    <MESSAGE value="Updated Roadmap handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Roadmap handling" />
   </component>
 </project>
