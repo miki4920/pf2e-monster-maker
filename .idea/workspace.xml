@@ -1,24 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="febb3016-758d-45aa-b041-c0f54cae3697" name="Default Changelist" comment="Updated Roadmap handling" />
+    <list default="true" id="b41edbaa-8b45-4104-bb49-86d8150da12f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectId" id="1xx9QZLTOsGmmDnhqAuzr34rj7G" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="281F0LOnWp8DKuycKnzBXRXgSXS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -27,72 +19,27 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../foundryvtt-battlemaps-integration" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
-    <configuration name="Debug" type="JavascriptDebugType" uri="http://localhost:30000/game" useFirstLineBreakpoints="true">
+    <configuration name="Unnamed" type="JavascriptDebugType" nameIsGenerated="true" uri="http://192.168.0.204:30000/join">
       <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="febb3016-758d-45aa-b041-c0f54cae3697" name="Default Changelist" comment="" />
-      <created>1631285860778</created>
+      <changelist id="b41edbaa-8b45-4104-bb49-86d8150da12f" name="Changes" comment="" />
+      <created>1650375961229</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1631285860778</updated>
-      <workItem from="1631285865317" duration="8668000" />
-      <workItem from="1631793789836" duration="885000" />
-      <workItem from="1631964582950" duration="3297000" />
-      <workItem from="1633197473080" duration="1005000" />
-      <workItem from="1633198520224" duration="13000" />
-      <workItem from="1633884027472" duration="77000" />
+      <updated>1650375961229</updated>
+      <workItem from="1650375962292" duration="1740000" />
     </task>
-    <task id="LOCAL-00001" summary="Started work on default templates">
-      <created>1631297396155</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1631297396155</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Implemented pathfinder creature templates">
-      <created>1631968242827</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1631968242827</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Updated Roadmap handling">
-      <created>1633884053181</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1633884053181</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Started work on default templates" />
-    <MESSAGE value="Implemented pathfinder creature templates" />
-    <MESSAGE value="Updated Roadmap handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Roadmap handling" />
   </component>
 </project>
