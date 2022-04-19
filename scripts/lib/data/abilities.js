@@ -67,11 +67,11 @@ export let data = {
             "Wisdom": ["data.abilities.wis.mod", "abilities"],
             "Charisma": ["data.abilities.cha.mod", "abilities"],
             "Hit Points": ["data.attributes.hp.value,data.attributes.hp.max", "hit_points"],
-            "Armor Class": ["data.attributes.ac.base", "armor_class"],
-            "Perception": ["data.attributes.perception.base", "perception/saves"],
-            "Fortitude": ["data.saves.fortitude.base", "perception/saves"],
-            "Reflex": ["data.saves.reflex.base", "perception/saves"],
-            "Willpower": ["data.saves.will.base", "perception/saves"]
+            "Armor Class": ["data.attributes.ac.value", "armor_class"],
+            "Perception": ["data.attributes.perception.value", "perception/saves"],
+            "Fortitude": ["data.saves.fortitude.value", "perception/saves"],
+            "Reflex": ["data.saves.reflex.value", "perception/saves"],
+            "Willpower": ["data.saves.will.value", "perception/saves"]
         },
         "items": {
             "Strike Attack Bonus": "strike_attack_bonus",

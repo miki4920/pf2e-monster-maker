@@ -1,15 +1,16 @@
-import {apply_road_map, delete_roadmap} from "./roadmap.js"
+import {apply_road_map, delete_road_map} from "./roadmap.js"
 import {Trait} from "./trait.js"
-import {id_to_name} from "./helpers.js"
 
 function equals(string_1, string_2) {
     return (string_1 === string_2);
 }
 
+function upper_case(string) {
+    return string.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
+}
 
-export function apply_handlebars() {
-    Handlebars.registerHelper('equals', equals);
-    Handlebars.registerHelper('id_to_name', id_to_name)
+function underscore(string) {
+    return string.replace(" ", "_");
 }
 
 function set_collapsibles() {
@@ -36,16 +37,22 @@ function set_roadmaps_events() {
                 apply_road_map(roadmap);
                 break;
             case 3:
-                delete_roadmap(roadmap);
+                delete_road_map(roadmap);
                 $(this).remove();
                 break;
         }
     })
 }
 
+export function apply_handlebars() {
+    Handlebars.registerHelper('equals', equals);
+    Handlebars.registerHelper('upper_case', upper_case)
+    Handlebars.registerHelper('underscore', underscore)
+}
 
 export function apply_jquery() {
     set_collapsibles();
     set_roadmaps_events();
     Trait.removeItems();
+    Trait.removeItemsInHTML();
 }

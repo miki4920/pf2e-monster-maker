@@ -1,12 +1,11 @@
 import {data} from "./data/abilities.js"
 import {get_name, get_level, get_fields, get_items, get_traits} from "./form_getters.js"
-import {id_to_name} from "./helpers.js"
 
 export class ApplyData {
     constructor(actor, form_data) {
         this.actor = actor;
         this.form_data = form_data;
-        this.level = -1;
+        this.level;
     }
 
     async apply_data() {
@@ -21,17 +20,16 @@ export class ApplyData {
     async apply_name() {
         let name = get_name(this.form_data);
         if (name) {
-            name = id_to_name(name);
-            await this.actor.update({"name": name});
+            await this.actor.update({"name": name})
             return;
         }
         ui.notifications.error(`The name is incorrect.`);
     }
 
     async apply_level() {
-        let level = get_level(this.form_data);
+        let level = get_level(this.form_data)
         if (level) {
-            this.level = level;
+            this.level = level
             await this.actor.update({"data.details.level.value": level});
             return;
         }
@@ -48,6 +46,7 @@ export class ApplyData {
                 dictionary[path] = parseInt(table[this.level][fields[key]]);
             }
         }
+
         await this.actor.update(dictionary);
     }
 
