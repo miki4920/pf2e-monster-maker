@@ -57,18 +57,58 @@ export function creature_builder_button(sheet, html) {
     }
 }
 
-export async function register_settings() {
-    await game.settings.register("foundryvtt-pf2e-monster-maker", "roadmaps", {
-        scope: 'world',
-        config: false,
-        type: Object,
-        default: {}
-    });
+export async function handle_token_drop(event) {
+    if (event.dataTransfer.items) {
+        for (let i = 0; i < event.dataTransfer.items.length; i++) {
+            if (event.dataTransfer.items[i].kind === 'file') {
+                event.preventDefault();
+                await create_actor_from_file(event.dataTransfer.items[i].getAsFile())
+            }
+            else {
+                await canvas._dragDrop.callbacks.drop(event);
+            }
+        }
 
-    await game.settings.register("foundryvtt-pf2e-monster-maker", "traits", {
-        scope: 'client',
-        config: false,
-        type: Object,
-        default: {}
-    });
+    }
+}
+
+function make_id() {
+    let result           = '';
+    let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let charactersLength = characters.length;
+    for (let i = 0; i < 64; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() *
+            charactersLength));
+    }
+    return result;
+}
+
+export async function handle_token_clipboard() {
+    let clip_items = await navigator.clipboard.read();
+    console.log(clip_items)
+    for (let idx = 0; idx < clip_items[0].types.length; idx++) {
+        const ftype = clip_items[0].types[idx];
+        if (ftype.startsWith("image/")) {
+            let blob = await clip_items[0].getType(ftype)
+            let file = await new File([blob], make_id() + ".png")
+            await create_actor_from_file(file);
+        }
+    }
+
+
+}
+
+async function create_actor_from_file(file) {
+    console.log(file)
+    const file_path = game.settings.get("foundryvtt-token-maker", "tokenDirectory");
+    let path = file_path + "/" + file.name
+    await FilePicker.upload("data", file_path, file);
+    let actor = await Actor.create(
+        {
+            name: "Rename Me!",
+            type: "npc",
+            img: path
+        });
+    apply_handlebars();
+    await create_dialog(actor);
 }
