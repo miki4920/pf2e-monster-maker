@@ -19,21 +19,23 @@ export class ApplyData {
 
     async apply_name() {
         let name = get_name(this.form_data);
-        if (name) {
-            await this.actor.update({"name": name})
-            return;
+        if (!name) {
+            name = "Magic";
         }
-        ui.notifications.error(`The name is incorrect.`);
+        await this.actor.update({"name": name})
+        await this.actor.update({"token.name": name})
+        console.log(this.actor)
+        return;
     }
 
     async apply_level() {
         let level = get_level(this.form_data)
-        if (level) {
-            this.level = level
-            await this.actor.update({"data.details.level.value": level});
-            return;
+        if (!level) {
+            level = -1
         }
-        ui.notifications.error(`The character level must be a number between -1 and 24.`);
+        this.level = level
+        await this.actor.update({"data.details.level.value": level});
+        return;
     }
 
     async apply_fields() {
