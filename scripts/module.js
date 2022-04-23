@@ -1,16 +1,19 @@
-import {creature_builder_button, handle_token_drop, handle_token_clipboard} from "./lib/lib.js"
+import {creature_builder_button, handle_token_drop, handle_token_clipboard, replace_token_button} from "./lib/lib.js"
 
 Hooks.on("init", async function() {
     await game.keybindings.register("foundryvtt-pf2e-monster-maker", "clipboard", {
         name: "Paste Image from Clipboard",
         restricted: true,
         uneditable: [
-            {key: "KeyV", modifiers: [ KeyboardManager.MODIFIER_KEYS.CONTROL ]}
+            {key: "KeyV", modifiers: [ KeyboardManager.MODIFIER_KEYS.CONTROL]}
         ],
         onDown: () => {
             handle_token_clipboard()
         },
     });
+})
+
+Hooks.on("init", async function() {
 
 })
 
@@ -45,4 +48,4 @@ Hooks.on('ready', async function() {
 })
 
 Hooks.on('renderActorSheet', creature_builder_button);
-
+Hooks.on('renderActorSheet', replace_token_button)
