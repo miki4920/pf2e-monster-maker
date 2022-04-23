@@ -63,8 +63,7 @@ export async function handle_token_drop(event) {
             if (event.dataTransfer.items[i].kind === 'file') {
                 event.preventDefault();
                 await create_actor_from_file(event.dataTransfer.items[i].getAsFile())
-            }
-            else {
+            } else {
                 await canvas._dragDrop.callbacks.drop(event);
             }
         }
@@ -73,10 +72,10 @@ export async function handle_token_drop(event) {
 }
 
 function make_id() {
-    let result           = '';
-    let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let charactersLength = characters.length;
-    for (let i = 0; i < 64; i++ ) {
+    for (let i = 0; i < 64; i++) {
         result += characters.charAt(Math.floor(Math.random() *
             charactersLength));
     }
@@ -85,7 +84,6 @@ function make_id() {
 
 export async function handle_token_clipboard() {
     let clip_items = await navigator.clipboard.read();
-    console.log(clip_items)
     for (let idx = 0; idx < clip_items[0].types.length; idx++) {
         const ftype = clip_items[0].types[idx];
         if (ftype.startsWith("image/")) {
@@ -99,7 +97,6 @@ export async function handle_token_clipboard() {
 }
 
 async function create_actor_from_file(file) {
-    console.log(file)
     const file_path = game.settings.get("foundryvtt-token-maker", "tokenDirectory");
     let path = file_path + "/" + file.name
     await FilePicker.upload("data", file_path, file);
@@ -111,4 +108,56 @@ async function create_actor_from_file(file) {
         });
     apply_handlebars();
     await create_dialog(actor);
+}
+
+async function replace_token(actor) {
+    new Dialog({
+        title: 'Example Dialog',
+        content: `
+    <form>
+      <div class="form-group">
+        <label>Image Url</label>
+        <input type='text' name='url_input_field'/>
+      </div>
+    </form>`,
+        buttons: {
+            yes: {
+                icon: "<i class='fas fa-check'></i>",
+                label: `Apply Changes`,
+            }
+        },
+        close: html => {
+            let result = html.find('input[name=\'url_input_field\']');
+            result = result.val();
+            if (result !== "") {
+                fetch(result, {
+                    method: "GET",
+                    headers: {
+                        "x-requested-with": "foundry"
+                    },
+                }).then(res => res.blob())
+                    .then(async blob => {
+                        let file = await new File([blob], make_id() + ".png")
+                        const file_path = game.settings.get("foundryvtt-token-maker", "tokenDirectory");
+                        let path = file_path + "/" + file.name
+                        await FilePicker.upload("data", file_path, file);
+                        await actor.update({"img": path})
+                        await actor.update({"token.img": path})
+
+                    });
+            }
+        }
+    }).render(true);
+}
+
+export function replace_token_button(sheet, html) {
+    const actor = sheet.actor;
+    let element = html.find('.window-header .window-title');
+    if (check_sheet(actor, element)) {
+        let button = $(`<a class="popout" style><i class="fas fa-book"></i>Replace Token</a>`);
+        button.on('click', function () {
+            replace_token(actor)
+        });
+        element.after(button);
+    }
 }
