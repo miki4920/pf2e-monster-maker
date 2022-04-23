@@ -24,8 +24,6 @@ export class ApplyData {
         }
         await this.actor.update({"name": name})
         await this.actor.update({"token.name": name})
-        console.log(this.actor)
-        return;
     }
 
     async apply_level() {
@@ -35,7 +33,6 @@ export class ApplyData {
         }
         this.level = level
         await this.actor.update({"data.details.level.value": level});
-        return;
     }
 
     async apply_fields() {
