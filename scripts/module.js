@@ -1,6 +1,7 @@
 import {
     creature_builder_button,
-    handle_token_clipboard
+    handle_token_clipboard,
+    check_sheet
 } from "./lib/lib.js"
 
 Hooks.on("init", async function () {

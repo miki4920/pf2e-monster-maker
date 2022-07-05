@@ -3,8 +3,8 @@ import {data} from "./data/abilities.js"
 import {apply_handlebars, apply_jquery} from "./handlebars.js"
 import {Roadmap, save_road_map, handle_drop} from "./roadmap.js"
 
-function check_sheet(actor, element) {
-    if (actor.data.type === 'npc' && actor.canUserModify(game.user, 'update')) {
+export function check_sheet(actor) {
+    if (actor?.data.type === 'npc' && game.user.getUserLevel() === 3) {
         return true;
     }
 }
@@ -47,7 +47,7 @@ async function create_dialog(actor) {
 export function creature_builder_button(sheet, html) {
     const actor = sheet.actor;
     let element = html.find('.window-header .window-title');
-    if (check_sheet(actor, element)) {
+    if (check_sheet(actor)) {
         let button = $(`<a class="popout" style><i class="fas fa-book"></i>Monster Maker</a>`);
         button.on('click', function () {
             apply_handlebars();
@@ -85,6 +85,9 @@ async function change_actor_token(path, actor) {
 }
 
 export async function handle_token_clipboard(event, sheet) {
+    if (!check_sheet(sheet.actor)){
+        return;
+    }
     if(sheet && !document.getElementById(sheet.options.id)) {
         await handle_token_clipboard(event, null)
         document.onpaste = async function(event){
