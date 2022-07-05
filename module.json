@@ -5,8 +5,8 @@
     "version": "1.1",
     "library": "false",
     "manifestPlusVersion": "1.0.0",
-    "minimumCoreVersion": "0.8.7",
-    "compatibleCoreVersion": "0.8.7",
+    "minimumCoreVersion": "9",
+    "compatibleCoreVersion": "9.269",
     "authors": [
         {
             "name": "The League of Extraordinary FVTT Developers",
