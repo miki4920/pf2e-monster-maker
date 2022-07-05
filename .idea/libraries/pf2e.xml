@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="pf2e" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/../../../../../../../../Program Files/Foundry Virtual Tabletop/resources/app" />
+        <item url="file://$PROJECT_DIR$/../../systems/pf2e" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../../../../../../Program Files/Foundry Virtual Tabletop/resources/app" />
+      <root url="file://$PROJECT_DIR$/../../systems/pf2e" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
