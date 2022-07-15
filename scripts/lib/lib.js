@@ -4,7 +4,7 @@ import {apply_handlebars, apply_jquery} from "./handlebars.js"
 import {Roadmap, save_road_map, handle_drop} from "./roadmap.js"
 
 export function check_sheet(actor) {
-    if (actor?.data.type === 'npc' && game.user.getUserLevel() === 3) {
+    if (actor?.data.type === 'npc') {
         return true;
     }
 }
@@ -85,9 +85,11 @@ async function change_actor_token(path, actor) {
 }
 
 export async function handle_token_clipboard(event, sheet) {
-    if (!check_sheet(sheet.actor)){
-        return;
+	if (sheet?.actor) {
+		if (!check_sheet(sheet.actor)){
+			return;
     }
+	}
     if(sheet && !document.getElementById(sheet.options.id)) {
         await handle_token_clipboard(event, null)
         document.onpaste = async function(event){
