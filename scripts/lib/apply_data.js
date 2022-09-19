@@ -1,11 +1,11 @@
 import {data} from "./data/abilities.js"
-import {get_name, get_level, get_fields, get_items, get_traits} from "./form_getters.js"
+import {get_name, get_level, get_fields, get_items} from "./form_getters.js"
 
 export class ApplyData {
     constructor(actor, form_data) {
         this.actor = actor;
         this.form_data = form_data;
-        this.level;
+        this.level = -1;
     }
 
     async apply_data() {
@@ -13,26 +13,17 @@ export class ApplyData {
         await this.apply_level();
         await this.apply_fields();
         await this.apply_attacks();
-        await this.apply_skills();
-        await this.apply_traits();
     }
 
     async apply_name() {
         let name = get_name(this.form_data);
-        if (!name) {
-            name = "Magic";
-        }
         await this.actor.update({"name": name})
         await this.actor.update({"token.name": name})
     }
 
     async apply_level() {
-        let level = get_level(this.form_data)
-        if (!level) {
-            level = -1
-        }
-        this.level = level
-        await this.actor.update({"data.details.level.value": level});
+        this.level = get_level(this.form_data)
+        await this.actor.update({"data.details.level.value": this.level});
     }
 
     async apply_fields() {
@@ -54,7 +45,7 @@ export class ApplyData {
         let strike_damage = data[data["values"]["items"]["Strike Damage"]][this.level][attacks["Strike Damage"]];
         let strike_attack_bonus = parseInt(data[data["values"]["items"]["Strike Attack Bonus"]][this.level][attacks["Strike Attack Bonus"]]);
         let attack = {
-            name: 'New Attack',
+            name: 'Attack',
             type: 'melee',
             data: {
                 damageRolls: [
@@ -68,33 +59,5 @@ export class ApplyData {
             },
         };
        await Item.create(attack, {parent: this.actor});
-    }
-
-    async apply_skills() {
-        let skills = get_items(this.form_data);
-        for (let skill of Object.keys(skills)) {
-            if (!skill.includes("Strike")) {
-                let skill_value = parseInt(data[data["values"]["items"][skill]][this.level][skills[skill]])
-                if (skill_value) {
-                    let skill_data = {
-                        name: skill,
-                        type: 'lore',
-                        data: {
-                            mod: {
-                                value: skill_value,
-                            },
-                        },
-                    };
-                    await Item.create(skill_data, {parent: this.actor});
-                }
-            }
-        }
-    }
-
-    async apply_traits() {
-        let traits = get_traits()
-        for (let trait of Object.values(traits)) {
-            await Item.create(trait, {parent: this.actor});
-        }
     }
 }

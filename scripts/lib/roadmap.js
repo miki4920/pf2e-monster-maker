@@ -1,5 +1,4 @@
-import {get_name,get_traits} from "./form_getters.js"
-import {Trait} from "./trait.js"
+import {get_name} from "./form_getters.js"
 
 export class Roadmap {
     static setItem(item, data) {
@@ -29,14 +28,6 @@ export class Roadmap {
     }
 }
 
-export function handle_drop(event) {
-    let data = JSON.parse(event.dataTransfer.getData("text/plain"))["data"];
-    let item = data["name"];
-    Trait.setItem(item, data);
-    Trait.setItemInHTML(item);
-}
-
-
 export function save_road_map(form) {
     let road_map_dictionary = {};
     let selections = [];
@@ -46,22 +37,13 @@ export function save_road_map(form) {
         }
     }
     road_map_dictionary["Selections"] = selections;
-    road_map_dictionary["Traits"] = get_traits();
     Roadmap.setItem(get_name(form), road_map_dictionary);
 }
 
 export function apply_road_map(roadmap) {
-    Trait.removeItems();
-    Trait.removeItemsInHTML();
     roadmap = Roadmap.getItem(roadmap);
     for(let id of roadmap["Selections"]) {
         document.getElementById(id).checked = true;
-    }
-    let traits = roadmap["Traits"];
-    for(let data of Object.values(traits)) {
-        let item = data["name"];
-        Trait.setItem(item, data);
-        Trait.setItemInHTML(item);
     }
 }
 

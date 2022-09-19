@@ -1,5 +1,4 @@
 import {apply_road_map, delete_road_map} from "./roadmap.js"
-import {Trait} from "./trait.js"
 
 function equals(string_1, string_2) {
     return (string_1 === string_2);
@@ -53,6 +52,4 @@ export function apply_handlebars() {
 export function apply_jquery() {
     set_collapsibles();
     set_roadmaps_events();
-    Trait.removeItems();
-    Trait.removeItemsInHTML();
 }

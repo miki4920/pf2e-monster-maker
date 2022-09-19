@@ -1,5 +1,4 @@
 import {data} from "./data/abilities.js"
-import {Trait} from "./trait.js"
 
 export function get_name(form) {
     let name = form.get("creature_name");
@@ -39,13 +38,4 @@ export function get_items(form) {
         items_dictionary[item] = form.get(item);
     }
     return items_dictionary;
-}
-
-export function get_traits() {
-    let traits_dictionary = {}
-    let traits = Trait.getItems()
-    for(let trait of traits) {
-        traits_dictionary[trait] = Trait.getItem(trait);
-    }
-    return traits_dictionary
 }

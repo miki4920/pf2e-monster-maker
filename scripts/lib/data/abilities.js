@@ -1,255 +1,57 @@
 export let data = {
-    "keys":
-        {
-            "Ability Scores": [{
-                "name": "Strength",
+    "keys": {
+        "Main Statistics": [{
+            "name": "Hit Points",
+            "values": ["high", "moderate", "low"],
+            "selected": "moderate"
+        },
+            {
+                "name": "Armor Class",
                 "values": ["extreme", "high", "moderate", "low"],
                 "selected": "moderate"
             },
-                {"name": "Dexterity", "values": ["extreme", "high", "moderate", "low"], "selected": "moderate"},
-                {"name": "Constitution", "values": ["extreme", "high", "moderate", "low"], "selected": "moderate"},
-                {"name": "Intelligence", "values": ["extreme", "high", "moderate", "low"], "selected": "moderate"},
-                {"name": "Wisdom", "values": ["extreme", "high", "moderate", "low"], "selected": "moderate"},
-                {"name": "Charisma", "values": ["extreme", "high", "moderate", "low"], "selected": "moderate"}],
-            "Main Statistics": [{"name": "Hit Points", "values": ["high", "moderate", "low"], "selected": "moderate"},
-                {"name": "Armor Class", "values": ["extreme", "high", "moderate", "low"], "selected": "moderate"},
-                {
-                    "name": "Perception",
-                    "values": ["extreme", "high", "moderate", "low", "terrible"],
-                    "selected": "moderate"
-                }],
-            "Saving Throws": [{
-                "name": "Fortitude",
+            {
+                "name": "Perception",
+                "values": ["extreme", "high", "moderate", "low", "terrible"],
+                "selected": "moderate"
+            }
+        ],
+        "Saving Throws": [{
+            "name": "Fortitude",
+            "values": ["extreme", "high", "moderate", "low", "terrible"],
+            "selected": "moderate"
+        },
+            {
+                "name": "Reflex",
                 "values": ["extreme", "high", "moderate", "low", "terrible"],
                 "selected": "moderate"
             },
-                {
-                    "name": "Reflex",
-                    "values": ["extreme", "high", "moderate", "low", "terrible"],
-                    "selected": "moderate"
-                },
-                {
-                    "name": "Willpower",
-                    "values": ["extreme", "high", "moderate", "low", "terrible"],
-                    "selected": "moderate"
-                }],
-            "Attacks": [{
-                "name": "Strike Attack Bonus",
+            {
+                "name": "Willpower",
+                "values": ["extreme", "high", "moderate", "low", "terrible"],
+                "selected": "moderate"
+            }
+        ],
+        "Attacks": [{
+            "name": "Strike Attack Bonus",
+            "values": ["extreme", "high", "moderate", "low"],
+            "selected": "moderate"
+        },
+            {
+                "name": "Strike Damage",
                 "values": ["extreme", "high", "moderate", "low"],
                 "selected": "moderate"
-            },
-                {"name": "Strike Damage", "values": ["extreme", "high", "moderate", "low"], "selected": "moderate"}],
-            "Skills": [
-                {"name": "Acrobatics", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"},
-                {"name": "Arcana", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"},
-                {"name": "Athletics", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"},
-                {"name": "Crafting", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"},
-                {"name": "Deception", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"},
-                {"name": "Diplomacy", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"},
-                {"name": "Intimidation", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"},
-                {"name": "Medicine", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"},
-                {"name": "Nature", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"},
-                {"name": "Occultism", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"},
-                {"name": "Performance", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"},
-                {"name": "Religion", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"},
-                {"name": "Society", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"},
-                {"name": "Stealth", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"},
-                {"name": "Survival", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"},
-                {"name": "Thievery", "values": ["extreme", "high", "moderate", "low", "none"], "selected": "none"}
-            ]
-        },
+            }
+        ]
+    },
     "values": {
         "fields": {
-            "Strength": ["data.abilities.str.mod", "abilities"],
-            "Dexterity": ["data.abilities.dex.mod", "abilities"],
-            "Constitution": ["data.abilities.con.mod", "abilities"],
-            "Intelligence": ["data.abilities.int.mod", "abilities"],
-            "Wisdom": ["data.abilities.wis.mod", "abilities"],
-            "Charisma": ["data.abilities.cha.mod", "abilities"],
             "Hit Points": ["data.attributes.hp.value,data.attributes.hp.max", "hit_points"],
             "Armor Class": ["data.attributes.ac.value", "armor_class"],
             "Perception": ["data.attributes.perception.value", "perception/saves"],
             "Fortitude": ["data.saves.fortitude.value", "perception/saves"],
             "Reflex": ["data.saves.reflex.value", "perception/saves"],
             "Willpower": ["data.saves.will.value", "perception/saves"]
-        },
-        "items": {
-            "Strike Attack Bonus": "strike_attack_bonus",
-            "Strike Damage": "strike_damage",
-            "Acrobatics": "skills",
-            "Arcana": "skills",
-            "Athletics": "skills",
-            "Crafting": "skills",
-            "Deception": "skills",
-            "Diplomacy": "skills",
-            "Intimidation": "skills",
-            "Medicine": "skills",
-            "Nature": "skills",
-            "Occultism": "skills",
-            "Performance": "skills",
-            "Religion": "skills",
-            "Society": "skills",
-            "Stealth": "skills",
-            "Survival": "skills",
-            "Thievery": "skills",
-        }
-    },
-    "abilities": {
-        "-1": {
-            "extreme": "4",
-            "high": "3",
-            "moderate": "2",
-            "low": "0"
-        },
-        "0": {
-            "extreme": "4",
-            "high": "3",
-            "moderate": "2",
-            "low": "0"
-        },
-        "1": {
-            "extreme": "5",
-            "high": "4",
-            "moderate": "3",
-            "low": "1"
-        },
-        "2": {
-            "extreme": "5",
-            "high": "4",
-            "moderate": "3",
-            "low": "1"
-        },
-        "3": {
-            "extreme": "5",
-            "high": "4",
-            "moderate": "3",
-            "low": "1"
-        },
-        "4": {
-            "extreme": "6",
-            "high": "5",
-            "moderate": "3",
-            "low": "2"
-        },
-        "5": {
-            "extreme": "6",
-            "high": "5",
-            "moderate": "4",
-            "low": "2"
-        },
-        "6": {
-            "extreme": "7",
-            "high": "5",
-            "moderate": "4",
-            "low": "2"
-        },
-        "7": {
-            "extreme": "7",
-            "high": "6",
-            "moderate": "4",
-            "low": "2"
-        },
-        "8": {
-            "extreme": "7",
-            "high": "6",
-            "moderate": "4",
-            "low": "3"
-        },
-        "9": {
-            "extreme": "7",
-            "high": "6",
-            "moderate": "4",
-            "low": "3"
-        },
-        "10": {
-            "extreme": "8",
-            "high": "7",
-            "moderate": "5",
-            "low": "3"
-        },
-        "11": {
-            "extreme": "8",
-            "high": "7",
-            "moderate": "5",
-            "low": "3"
-        },
-        "12": {
-            "extreme": "8",
-            "high": "7",
-            "moderate": "5",
-            "low": "4"
-        },
-        "13": {
-            "extreme": "9",
-            "high": "8",
-            "moderate": "5",
-            "low": "4"
-        },
-        "14": {
-            "extreme": "9",
-            "high": "8",
-            "moderate": "5",
-            "low": "4"
-        },
-        "15": {
-            "extreme": "9",
-            "high": "8",
-            "moderate": "6",
-            "low": "4"
-        },
-        "16": {
-            "extreme": "10",
-            "high": "9",
-            "moderate": "6",
-            "low": "5"
-        },
-        "17": {
-            "extreme": "10",
-            "high": "9",
-            "moderate": "6",
-            "low": "4"
-        },
-        "18": {
-            "extreme": "10",
-            "high": "9",
-            "moderate": "6",
-            "low": "5"
-        },
-        "19": {
-            "extreme": "11",
-            "high": "10",
-            "moderate": "6",
-            "low": "5"
-        },
-        "20": {
-            "extreme": "11",
-            "high": "10",
-            "moderate": "7",
-            "low": "6"
-        },
-        "21": {
-            "extreme": "11",
-            "high": "10",
-            "moderate": "7",
-            "low": "6"
-        },
-        "22": {
-            "extreme": "11",
-            "high": "10",
-            "moderate": "8",
-            "low": "6"
-        },
-        "23": {
-            "extreme": "11",
-            "high": "10",
-            "moderate": "8",
-            "low": "6"
-        },
-        "24": {
-            "extreme": "13",
-            "high": "12",
-            "moderate": "9",
-            "low": "7"
         }
     },
     "perception/saves": {
@@ -724,164 +526,6 @@ export let data = {
             "high": "51",
             "moderate": "50",
             "low": "48"
-        }
-    },
-    "skills": {
-        "-1": {
-            "extreme": "+8",
-            "high": "+5",
-            "moderate": "+4",
-            "low": "+2"
-        },
-        "0": {
-            "extreme": "+9",
-            "high": "+6",
-            "moderate": "+5",
-            "low": "+3"
-        },
-        "1": {
-            "extreme": "+10",
-            "high": "+7",
-            "moderate": "+6",
-            "low": "+4"
-        },
-        "2": {
-            "extreme": "+11",
-            "high": "+8",
-            "moderate": "+7",
-            "low": "+5"
-        },
-        "3": {
-            "extreme": "+13",
-            "high": "+10",
-            "moderate": "+9",
-            "low": "+6"
-        },
-        "4": {
-            "extreme": "+15",
-            "high": "+12",
-            "moderate": "+10",
-            "low": "+8"
-        },
-        "5": {
-            "extreme": "+16",
-            "high": "+13",
-            "moderate": "+12",
-            "low": "+9"
-        },
-        "6": {
-            "extreme": "+18",
-            "high": "+15",
-            "moderate": "+13",
-            "low": "+10"
-        },
-        "7": {
-            "extreme": "+20",
-            "high": "+17",
-            "moderate": "+15",
-            "low": "+12"
-        },
-        "8": {
-            "extreme": "+21",
-            "high": "+18",
-            "moderate": "+16",
-            "low": "+13"
-        },
-        "9": {
-            "extreme": "+23",
-            "high": "+20",
-            "moderate": "+18",
-            "low": "+14"
-        },
-        "10": {
-            "extreme": "+25",
-            "high": "+22",
-            "moderate": "+19",
-            "low": "+16"
-        },
-        "11": {
-            "extreme": "+26",
-            "high": "+23",
-            "moderate": "+21",
-            "low": "+18"
-        },
-        "12": {
-            "extreme": "+28",
-            "high": "+25",
-            "moderate": "+22",
-            "low": "+19"
-        },
-        "13": {
-            "extreme": "+30",
-            "high": "+27",
-            "moderate": "+24",
-            "low": "+21"
-        },
-        "14": {
-            "extreme": "+31",
-            "high": "+28",
-            "moderate": "+25",
-            "low": "+22"
-        },
-        "15": {
-            "extreme": "+33",
-            "high": "+30",
-            "moderate": "+27",
-            "low": "+23"
-        },
-        "16": {
-            "extreme": "+35",
-            "high": "+32",
-            "moderate": "+28",
-            "low": "+25"
-        },
-        "17": {
-            "extreme": "+36",
-            "high": "+33",
-            "moderate": "+30",
-            "low": "+26"
-        },
-        "18": {
-            "extreme": "+38",
-            "high": "+35",
-            "moderate": "+31",
-            "low": "+28"
-        },
-        "19": {
-            "extreme": "+40",
-            "high": "+37",
-            "moderate": "+33",
-            "low": "+29"
-        },
-        "20": {
-            "extreme": "+41",
-            "high": "+38",
-            "moderate": "+34",
-            "low": "+30"
-        },
-        "21": {
-            "extreme": "+43",
-            "high": "+40",
-            "moderate": "+36",
-            "low": "+31"
-        },
-        "22": {
-            "extreme": "+45",
-            "high": "+42",
-            "moderate": "+37",
-            "low": "+32"
-        },
-        "23": {
-            "extreme": "+46",
-            "high": "+43",
-            "moderate": "+38",
-            "low": "+34"
-        },
-        "24": {
-            "extreme": "+48",
-            "high": "+45",
-            "moderate": "+40",
-            "low": "+36"
         }
     },
     "strike_attack_bonus": {
