@@ -4,7 +4,7 @@ module.exports = {
     entry: './src/index.ts',
     watch: true,
     watchOptions: {
-        aggregateTimeout: 600,
+        aggregateTimeout: 100,
     },
     module: {
         rules: [
