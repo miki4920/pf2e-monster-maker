@@ -1,27 +1,53 @@
 <form>
-    <nav>
-        <button>Basic</button>
-    </nav>
-    <main>
+    <h1>Make Your Monster:</h1>
 
-    </main>
-    <div class="form-group setting">
-        <label for="priorityIDs">Priority Characters</label>
-        <div class="form-fields">
-            <input type="text" name="priorityIDs" id="priorityIDs" class="wealth">
+        <h2>Name + Level</h2>
+        <div class="form-group setting">
+            <label for="monsterMakerName" class="monsterMakerFormText">
+                Monster Name
+            </label>
+            <input id="monsterMakerName" name="Name" class="monsterMakerFormText">
         </div>
-        <p class="notes">Displays characters from this list before ones in the regular characters. Used for treasury.</p>
-    </div>
-    <div class="form-group setting">
-        <label for="IDs">Characters</label>
-        <div class="form-fields">
-            <input type="text" name="IDs" id="IDs" class="wealth">
+        <div class="form-group setting">
+            <label for="monsterMakerLevel" class="monsterMakerFormText">
+                Monster Name
+            </label>
+            <select name="Level" id="monsterMakerLevel" class="monsterMakerFormTextSmall">
+                {{#each Levels}}
+                    <option value={{this}}>{{this}}</option>
+                {{/each}}
+            </select>
         </div>
-        <p class="notes">Displays those characters in a wealth viewer in alphabetical order.</p>
+
+    {{#each CreatureStatistics}}
+            <h3>{{this.name}}</h3>
+            {{#each this.statisticEntries}}
+                <div class="form-group setting">
+                    <label for="{{concat 'monsterMaker' this.name}}" class="monsterMakerFormText">
+                        {{this.name}}
+                    </label>
+                    <select id="{{concat 'monsterMaker' this.name}}" name="{{this.name}}" class="monsterMakerFormTextSmall">
+                        {{#if this.availableOptions}}
+                            {{#each this.availableOptions}}
+                                <option value="{{this}}">
+                                    {{this}}
+                                </option>
+                            {{/each}}
+                        {{/if}}
+                        {{#unless license}}
+                            {{#each ../this.availableOptions}}
+                                <option value="{{this}}">
+                                    {{this}}
+                                </option>
+                            {{/each}}
+                        {{/unless}}
+                    </select>
+                </div>
+            {{/each}}
+
+    {{/each}}
+    <div class="buttons">
+            <button type="submit" id="monsterMakerFormSubmit">Submit</button>
     </div>
-    <div class="form-group buttons">
-        <button type="submit" name="submit">
-            <i class="fa fa-check"></i> Submit
-        </button>
-    </div>
+
 </form>
