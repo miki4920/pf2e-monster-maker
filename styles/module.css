@@ -1,60 +1,17 @@
-#monster_maker input[type="radio"] {
-    display: none;
-}
-
-#monster_maker .button_label {
-    margin: 0 8px;
-    cursor: pointer;
-}
-
-#monster_maker .creature_builder_input input[type="radio"]:checked+.button_label {
-    background-color: #bbb;
-}
-
-#monster_maker h4{
-    margin: 0 8px;
-}
-
-#monster_maker .collapsible {
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-}
-
-#monster_maker .collapsible:after {
-    content: '\002B';
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-}
-
-#monster_maker .active:after {
-    content: "\2212";
-}
-
-#monster_maker .content {
-    padding: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-}
-
-#monster_maker #roadmaps {
+#monsterMakerForm form{
     display: flex;
     flex-direction: column;
 }
 
-#monster_maker #roadmaps label {
-    width: 100%;
-    font-size: 1em;
+#monsterMakerForm .monsterMakerFormText {
+    font-size: 16px;
 }
 
-#monster_maker #monster_maker_traits {
-    margin: 0 8px;
+#monsterMakerForm .monsterMakerFormTextSmall {
+    font-size: 15px;
 }
 
+#monsterMakerForm label {
+    font-size: 16px;
+}
 
