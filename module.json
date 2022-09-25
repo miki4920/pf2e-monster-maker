@@ -16,15 +16,7 @@
     ],
     "dependencies": [],
     "conflicts": [],
-    "esmodules": [
-        "/scripts/module.js",
-        "/scripts/lib/lib.js",
-        "/scripts/lib/apply_data.js",
-        "/scripts/lib/data/abilities.js",
-        "/scripts/lib/handlebars.js",
-        "/scripts/lib/form_getters.js",
-        "/scripts/lib/roadmap.js",
-        "/scripts/lib/trait.js"
+    "esmodules": ["/dist/bundle.js"
     ],
     "scripts": [],
     "styles": [
