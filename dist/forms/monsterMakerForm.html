@@ -1,6 +1,5 @@
 <form>
     <h1>Make Your Monster:</h1>
-
         <h2>Name + Level</h2>
         <div class="form-group setting">
             <label for="monsterMakerName" class="monsterMakerFormText">
@@ -34,7 +33,7 @@
                                 </option>
                             {{/each}}
                         {{/if}}
-                        {{#unless license}}
+                        {{#unless this.availableOptions}}
                             {{#each ../this.availableOptions}}
                                 <option value="{{this}}">
                                     {{this}}
