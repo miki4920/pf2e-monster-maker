@@ -45,12 +45,12 @@ export enum Statistics {
 }
 
 export enum Options {
-    extreme = 'extreme',
-    high = 'high',
-    moderate = 'moderate',
-    low = 'low',
-    terrible = 'terrible',
-    none = 'none',
+    extreme = 'Extreme',
+    high = 'High',
+    moderate = 'Moderate',
+    low = 'Low',
+    terrible = 'Terrible',
+    none = 'None',
 }
 
 export class CreatureStatistic {
@@ -69,7 +69,7 @@ export class CreatureStatisticCategory {
 export const DefaultCreatureStatistics: CreatureStatisticCategory[] = [
     {
         name: 'Ability Scores',
-        availableOptions: [Options.extreme, Options.high, Options.moderate, Options.low, Options.terrible],
+        availableOptions: [Options.terrible, Options.low, Options.moderate, Options.high, Options.extreme],
         defaultValue: Options.moderate,
         statisticEntries: [
             {
@@ -100,13 +100,13 @@ export const DefaultCreatureStatistics: CreatureStatisticCategory[] = [
     },
     {
         name: "Defence + Perception",
-        availableOptions: [Options.extreme, Options.high, Options.moderate, Options.low, Options.terrible],
+        availableOptions: [Options.terrible, Options.low, Options.moderate, Options.high, Options.extreme],
         defaultValue: Options.moderate,
         statisticEntries: [
             {
                 name: Statistics.hp,
                 actorField: 'data.attributes.hp.max',
-                availableOptions: [Options.high, Options.moderate, Options.low]
+                availableOptions: [Options.low, Options.moderate, Options.high]
             },
             {
                 name: Statistics.per,
@@ -115,7 +115,7 @@ export const DefaultCreatureStatistics: CreatureStatisticCategory[] = [
             {
                 name: Statistics.ac,
                 actorField: 'data.attributes.ac.value',
-                availableOptions: [Options.extreme, Options.high, Options.moderate, Options.low],
+                availableOptions: [Options.low, Options.moderate, Options.high, Options.extreme],
             },
             {
 
@@ -135,7 +135,7 @@ export const DefaultCreatureStatistics: CreatureStatisticCategory[] = [
     },
     {
         name: 'Strikes',
-        availableOptions: [Options.extreme, Options.high, Options.moderate, Options.low],
+        availableOptions: [Options.low, Options.moderate, Options.high, Options.extreme],
         defaultValue: Options.moderate,
         statisticEntries: [
             {
@@ -150,7 +150,7 @@ export const DefaultCreatureStatistics: CreatureStatisticCategory[] = [
     {
         name: Statistics.spellcasting,
         defaultValue: Options.none,
-        availableOptions: [Options.extreme, Options.high, Options.moderate, Options.none],
+        availableOptions: [Options.none, Options.moderate, Options.high, Options.extreme],
         statisticEntries: [
             {
                 name: Statistics.spellcasting,
@@ -161,7 +161,7 @@ export const DefaultCreatureStatistics: CreatureStatisticCategory[] = [
     {
         name: 'Skills',
         defaultValue: Options.none,
-        availableOptions: [Options.extreme, Options.high, Options.moderate, Options.low, Options.none],
+        availableOptions: [Options.none, Options.low, Options.moderate, Options.high, Options.extreme],
         statisticEntries: [
             {
                 name: Statistics.acrobatics,
