@@ -1,8 +1,9 @@
-import {DefaultCreatureStatistics, Levels} from "./Data";
+import {actorFields, DefaultCreatureStatistics, Levels} from "./Keys";
+import {statisticValues} from "./Values";
+import Document from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs";
 
 export class MonsterMaker extends FormApplication {
     data = DefaultCreatureStatistics
-
     override activateListeners(): void {
         for(const category of this.data) {
             for(const statistic of category.statisticEntries) {
@@ -27,8 +28,19 @@ export class MonsterMaker extends FormApplication {
     }
 
     // @ts-ignore
-    protected _updateObject(event: Event, formData?: object): Promise<unknown> {
-        console.log(formData)
+    protected async _updateObject(event: Event, formData?: object): Promise<unknown> {
+        if(formData) {
+            let updateData = {}
+            let level = formData["Level"]
+            for(const key of Object.keys(formData)) {
+                if(actorFields[key]) {
+                    let actorField = actorFields[key]
+                    let option = formData[key]
+                    updateData[actorField] = parseInt(statisticValues[key][level][option])
+                }
+            }
+            await (<Document<any>>this.object).update(updateData);
+        }
     }
 
     // @ts-ignore
