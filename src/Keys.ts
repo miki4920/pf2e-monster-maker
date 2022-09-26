@@ -2,6 +2,8 @@ export const Levels: String[] = ['-1', '0', '1', '2', '3', '4', '5', '6', '7', '
     '15', '16', '17', '18', '19', '20', '21', '22', '23', '24']
 
 export enum Statistics {
+    name = 'Name',
+    level = 'Level',
     // Ability Scores
     str = 'Strength',
     dex = 'Dexterity',
@@ -45,6 +47,11 @@ export enum Statistics {
     thievery = 'Thievery',
 }
 
+export const Skills: Statistics[] = [Statistics.acrobatics, Statistics.arcana, Statistics.athletics, Statistics.crafting,
+    Statistics.deception, Statistics.diplomacy, Statistics.intimidation, Statistics.medicine, Statistics.nature,
+    Statistics.occultism, Statistics.performance, Statistics.religion, Statistics.society, Statistics.stealth,
+    Statistics.survival, Statistics.thievery]
+
 export const actorFields = {
     // Ability Scores
     [Statistics.str]: 'system.abilities.str.mod',
@@ -53,6 +60,8 @@ export const actorFields = {
     [Statistics.int]: 'system.abilities.int.mod',
     [Statistics.wis]: 'system.abilities.wis.mod',
     [Statistics.cha]: 'system.abilities.cha.mod',
+
+    [Statistics.hp]: 'system.attributes.hp.max',
 
     [Statistics.per]: 'system.attributes.perception.value',
 
