@@ -1,4 +1,5 @@
-export const Levels: String[] = ['-1', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24']
+export const Levels: String[] = ['-1', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14',
+    '15', '16', '17', '18', '19', '20', '21', '22', '23', '24']
 
 export enum Statistics {
     // Ability Scores
@@ -9,7 +10,21 @@ export enum Statistics {
     wis = 'Wisdom',
     cha = 'Charisma',
 
+    hp = 'Hit Points',
+
     per = 'Perception',
+
+    ac = 'Armor Class',
+
+    // Saves
+    fort = 'Fortitude',
+    ref = 'Reflex',
+    wil = 'Will',
+
+    // Strikes
+    strikeBonus = 'Strike Attack Bonus',
+    strikeDamage = 'Strike Damage',
+    spellcasting = 'Spellcasting',
 
     // Skills
     acrobatics = 'Acrobatics',
@@ -28,21 +43,27 @@ export enum Statistics {
     stealth = 'Stealth',
     survival = 'Survival',
     thievery = 'Thievery',
+}
 
-    ac = 'Armor Class',
+export const actorFields = {
+    // Ability Scores
+    [Statistics.str]: 'system.abilities.str.mod',
+    [Statistics.dex]: 'system.abilities.dex.mod',
+    [Statistics.con]: 'system.abilities.con.mod',
+    [Statistics.int]: 'system.abilities.int.mod',
+    [Statistics.wis]: 'system.abilities.wis.mod',
+    [Statistics.cha]: 'system.abilities.cha.mod',
+
+    [Statistics.per]: 'system.attributes.perception.value',
+
+    [Statistics.ac]: 'system.attributes.ac.value',
 
     // Saves
-    fort = 'Fortitude',
-    ref = 'Reflex',
-    wil = 'Will',
-
-    hp = 'Hit Points',
-
-    // Strikes
-    strikeBonus = 'Strike Attack Bonus',
-    strikeDamage = 'Strike Damage',
-    spellcasting = 'Spellcasting',
+    [Statistics.fort]: 'system.saves.fortitude.value',
+    [Statistics.ref]: 'system.saves.reflex.value',
+    [Statistics.wil]: 'system.saves.will.value',
 }
+
 
 export enum Options {
     extreme = 'Extreme',
@@ -55,7 +76,6 @@ export enum Options {
 
 export class CreatureStatistic {
     name: string;
-    actorField?: string;
     availableOptions?: Options[];
 }
 
@@ -74,27 +94,21 @@ export const DefaultCreatureStatistics: CreatureStatisticCategory[] = [
         statisticEntries: [
             {
                 name: Statistics.str,
-                actorField: 'system.abilities.str.mod',
             },
             {
                 name: Statistics.dex,
-                actorField: 'system.abilities.dex.mod',
             },
             {
                 name: Statistics.con,
-                actorField: 'system.abilities.con.mod',
             },
             {
                 name: Statistics.int,
-                actorField: 'system.abilities.int.mod',
             },
             {
                 name: Statistics.wis,
-                actorField: 'system.abilities.wis.mod',
             },
             {
                 name: Statistics.cha,
-                actorField: 'system.abilities.cha.mod',
             }
         ]
     },
@@ -105,31 +119,23 @@ export const DefaultCreatureStatistics: CreatureStatisticCategory[] = [
         statisticEntries: [
             {
                 name: Statistics.hp,
-                actorField: 'data.attributes.hp.max',
                 availableOptions: [Options.low, Options.moderate, Options.high]
             },
             {
                 name: Statistics.per,
-                actorField: 'data.attributes.perception.value',
             },
             {
                 name: Statistics.ac,
-                actorField: 'data.attributes.ac.value',
                 availableOptions: [Options.low, Options.moderate, Options.high, Options.extreme],
             },
             {
-
                 name: Statistics.fort,
-                actorField: 'data.saves.fortitude.value',
-
             },
             {
                 name: Statistics.ref,
-                actorField: 'data.saves.reflex.value',
             },
             {
                 name: Statistics.wil,
-                actorField: 'data.saves.will.value',
             }
         ]
     },
@@ -140,11 +146,9 @@ export const DefaultCreatureStatistics: CreatureStatisticCategory[] = [
         statisticEntries: [
             {
                 name: Statistics.strikeBonus,
-                actorField: 'none',
             },
             {
                 name: Statistics.strikeDamage,
-                actorField: 'none',
             }]
     },
     {
@@ -154,7 +158,6 @@ export const DefaultCreatureStatistics: CreatureStatisticCategory[] = [
         statisticEntries: [
             {
                 name: Statistics.spellcasting,
-                actorField: 'none'
             },
         ]
     },
@@ -165,69 +168,51 @@ export const DefaultCreatureStatistics: CreatureStatisticCategory[] = [
         statisticEntries: [
             {
                 name: Statistics.acrobatics,
-                actorField: 'none',
             },
             {
                 name: Statistics.arcana,
-                actorField: 'none',
             },
             {
                 name: Statistics.athletics,
-                actorField: 'none',
             },
             {
                 name: Statistics.crafting,
-                actorField: 'none',
             },
             {
                 name: Statistics.deception,
-                actorField: 'none',
             },
             {
                 name: Statistics.diplomacy,
-                actorField: 'none',
             },
             {
                 name: Statistics.intimidation,
-                actorField: 'none',
             },
             {
                 name: Statistics.medicine,
-                actorField: 'none',
             },
             {
                 name: Statistics.nature,
-                actorField: 'none',
             },
             {
                 name: Statistics.occultism,
-                actorField: 'none',
             },
             {
                 name: Statistics.performance,
-                actorField: 'none',
             },
             {
                 name: Statistics.religion,
-                actorField: 'none',
             },
             {
                 name: Statistics.society,
-                actorField: 'none',
             },
             {
                 name: Statistics.stealth,
-                actorField: 'none',
             },
             {
                 name: Statistics.survival,
-                actorField: 'none',
-
             },
             {
                 name: Statistics.thievery,
-                actorField: 'none',
             }]
     },
 ]
-
