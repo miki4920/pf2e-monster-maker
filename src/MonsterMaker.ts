@@ -7,16 +7,16 @@ export class MonsterMaker extends FormApplication {
     data = DefaultCreatureStatistics
     actor = <BaseActor>this.object
     level = "-1"
-    override activateListeners(): void {
-        for(const category of this.data) {
-            for(const statistic of category.statisticEntries) {
-                let element = <HTMLInputElement>document.getElementById("monsterMaker" + statistic.name)
-                if (element) {
-                    element.value = category.defaultValue;
-                }
-            }
-        }
-    }
+    // override activateListeners(): void {
+    //     for(const category of this.data) {
+    //         for(const statistic of category.statisticEntries) {
+    //             let element = <HTMLInputElement>document.getElementById("monsterMaker" + statistic.name)
+    //             if (element) {
+    //                 element.value = category.defaultValue;
+    //             }
+    //         }
+    //     }
+    // }
 
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
@@ -132,6 +132,9 @@ export class MonsterMaker extends FormApplication {
 
     // @ts-ignore
     getData() {
+        Handlebars.registerHelper('json', function(context) {
+            return JSON.stringify(context);
+        });
         return {"CreatureStatistics": JSON.parse(JSON.stringify(this.data)), "Levels": Levels}
     }
 
