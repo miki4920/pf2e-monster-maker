@@ -83,6 +83,41 @@ export enum Options {
     none = 'None',
 }
 
+export const RoadMaps = {
+    "Brute": {
+        [Statistics.per]: Options.low, [Statistics.str]: Options.extreme, [Statistics.con]: Options.high,
+        [Statistics.dex]: Options.low, [Statistics.int]: Options.low, [Statistics.wis]: Options.low,
+        [Statistics.cha]: Options.low, [Statistics.ac]: Options.low, [Statistics.fort]: Options.high,
+        [Statistics.ref]: Options.low, [Statistics.wil]: Options.low, [Statistics.hp]: Options.high,
+        [Statistics.strikeBonus]: Options.moderate, [Statistics.strikeDamage]: Options.extreme
+    },
+    "Magical Striker": {
+        [Statistics.strikeBonus]: Options.high, [Statistics.strikeDamage]: Options.high,
+        [Statistics.spellcasting]: Options.high
+    },
+    "Skirmisher": {[Statistics.dex]: Options.high, [Statistics.fort]: Options.low, [Statistics.ref]: Options.high},
+    "Sniper": {
+        [Statistics.per]: Options.high, [Statistics.dex]: Options.high, [Statistics.fort]: Options.low,
+        [Statistics.ref]: Options.high, [Statistics.hp]: Options.low, [Statistics.strikeBonus]: Options.high,
+        [Statistics.strikeDamage]: Options.high
+    },
+    "Soldier": {
+        [Statistics.str]: Options.high, [Statistics.ac]: Options.high, [Statistics.fort]: Options.high,
+        [Statistics.strikeBonus]: Options.high, [Statistics.strikeDamage]: Options.high
+    },
+    "Spellcaster": {
+        [Statistics.int]: Options.high,
+        [Statistics.wis]: Options.high,
+        [Statistics.cha]: Options.high,
+        [Statistics.fort]: Options.low,
+        [Statistics.wil]: Options.high,
+        [Statistics.hp]: Options.low,
+        [Statistics.strikeBonus]: Options.low,
+        [Statistics.strikeDamage]: Options.low,
+        [Statistics.spellcasting]: Options.high
+    }
+}
+
 export class CreatureStatistic {
     name: string;
     availableOptions?: Options[];
