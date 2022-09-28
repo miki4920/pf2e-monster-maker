@@ -21,9 +21,10 @@
         <label for="monsterMakerRoadmap" class="monsterMakerFormText">
             Monster Roadmap
         </label>
-        <select id="monsterMakerRoadmap" class="monsterMakerFormTextSmall">
-            {{#each Roadmap}}
-                <option value={{this}}>{{this}}</option>
+        <select id="monsterMakerRoadmap" class="monsterMakerFormTextSmall" onchange=setRoadmap(this)>
+            <option value="None" selected>None</option>
+            {{#each RoadMaps}}
+                <option value="{{@key}}">{{@key}}</option>
             {{/each}}
         </select>
     </div>
@@ -61,12 +62,26 @@
 </form>
 <script>
     monsterCreatureStatistics = {{{json CreatureStatistics}}}
+    monsterCreatureRoadmaps = {{{json RoadMaps}}}
     function setDefaults() {
         for (const category of monsterCreatureStatistics) {
             for (const statistic of category.statisticEntries) {
                 let element = document.getElementById("monsterMaker" + statistic.name)
                 if (element) {
                     element.value = category.defaultValue;
+                }
+            }
+        }
+    }
+    function setRoadmap(selectedRoadmap) {
+        let roadmapValue = selectedRoadmap.value;
+        setDefaults();
+        if(monsterCreatureRoadmaps[roadmapValue]) {
+            let roadmap = monsterCreatureRoadmaps[roadmapValue]
+            for (const [key, value] of Object.entries(roadmap)) {
+                let select = document.getElementById("monsterMaker" + key)
+                if(select) {
+                    select.value = value
                 }
             }
         }
