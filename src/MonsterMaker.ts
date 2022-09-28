@@ -1,4 +1,4 @@
-import {actorFields, DefaultCreatureStatistics, Levels, Statistics, Skills, Options} from "./Keys";
+import {actorFields, DefaultCreatureStatistics, Levels, Statistics, Skills, Options, RoadMaps} from "./Keys";
 import {statisticValues} from "./Values";
 import {BaseActor} from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs";
 
@@ -125,7 +125,7 @@ export class MonsterMaker extends FormApplication {
         Handlebars.registerHelper('json', function(context) {
             return JSON.stringify(context);
         });
-        return {"CreatureStatistics": JSON.parse(JSON.stringify(this.data)), "Levels": Levels}
+        return {"CreatureStatistics": JSON.parse(JSON.stringify(this.data)), "Levels": Levels, "RoadMaps": RoadMaps}
     }
 
 }
