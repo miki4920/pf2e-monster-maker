@@ -83,6 +83,7 @@ export enum Options {
     none = 'None',
 }
 
+// TODO: Add a default roadmap that sets all options to default values.
 export const RoadMaps = {
     "Brute": {
         [Statistics.per]: Options.low, [Statistics.str]: Options.extreme, [Statistics.con]: Options.high,
