@@ -12,7 +12,7 @@ export class MonsterMaker extends FormApplication {
         return mergeObject(super.defaultOptions, {
             classes: ["form"],
             popOut: true,
-            template: `modules/foundryvtt-pf2e-monster-maker/dist/forms/monsterMakerForm.html`,
+            template: `forms/monsterMakerForm.html`,
             id: "monsterMakerForm",
             title: "Monster Maker Form",
             height: 800,
