@@ -21,7 +21,7 @@ export class MonsterMaker extends FormApplication {
     }
 
     applyName(formData) {
-        let name = formData[Statistics.name] ? formData[Statistics.name] : "Placeholder"
+        let name = formData[Statistics.name] ? formData[Statistics.name] : "."
         return {"name": name}
     }
 
@@ -41,7 +41,7 @@ export class MonsterMaker extends FormApplication {
         const strikeBonus = parseInt(statisticValues[Statistics.strikeBonus][this.level][strikeBonusOption])
         const strikeDamage = statisticValues[Statistics.strikeDamage][this.level][strikeDamageOption]
         let strike = {
-            name: 'Strike',
+            name: '.',
             type: 'melee',
             data: {
                 damageRolls: [
@@ -102,6 +102,7 @@ export class MonsterMaker extends FormApplication {
     protected async _updateObject(event: Event, formData?: object) {
         if(formData) {
             let updateData = {}
+            console.log(formData)
             this.level = formData[Statistics.level]
             for(const key of Object.keys(formData)) {
                 if(actorFields[key]) {
