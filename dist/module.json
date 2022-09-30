@@ -22,6 +22,13 @@
             "path": "languages/en.json"
         }
     ],
+    "relationships": {
+        "systems": [{
+            "id": "pf2e",
+            "type": "system",
+            "manifest": "https://github.com/foundryvtt/pf2e/releases/latest/download/system.json"
+        }]
+    },
     "url": "https://github.com/miki4920/foundryvtt-pf2e-monster-maker",
     "manifest": "https://github.com/miki4920/foundryvtt-pf2e-monster-maker/releases/latest/download/module.json",
     "download": "https://github.com/miki4920/foundryvtt-pf2e-monster-maker/releases/lates/download/module.zip"
