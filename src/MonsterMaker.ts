@@ -21,7 +21,7 @@ export class MonsterMaker extends FormApplication {
     }
 
     applyName(formData) {
-        let name = formData[Statistics.name] ? formData[Statistics.name] : "."
+        let name = formData[Statistics.name] ? formData[Statistics.name] : game["i18n"].localize("PF2EMONSTERMAKER.namePlaceholder")
         return {"name": name}
     }
 
