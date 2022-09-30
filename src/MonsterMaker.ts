@@ -41,7 +41,7 @@ export class MonsterMaker extends FormApplication {
         const strikeBonus = parseInt(statisticValues[Statistics.strikeBonus][this.level][strikeBonusOption])
         const strikeDamage = statisticValues[Statistics.strikeDamage][this.level][strikeDamageOption]
         let strike = {
-            name: '.',
+            name: game["i18n"].localize("PF2EMONSTERMAKER.strike"),
             type: 'melee',
             data: {
                 damageRolls: [
@@ -61,7 +61,7 @@ export class MonsterMaker extends FormApplication {
         const spellcastingOption = formData[Statistics.spellcasting]
         const spellcastingBonus = parseInt(statisticValues[Statistics.spellcasting][this.level][spellcastingOption])
         const spellcasting = {
-            name: "Spellcasting",
+            name: game["i18n"].localize("PF2EMONSTERMAKER.spellcasting"),
             type: "spellcastingEntry",
             system: {
                 spelldc: {
@@ -86,7 +86,7 @@ export class MonsterMaker extends FormApplication {
             if (option !== Options.none) {
                 const value = parseInt(statisticValues[skillName][this.level][option])
                 const skill = {
-                    name: skillName,
+                    name: game["i18n"].localize(skillName),
                     type: 'lore',
                     data: {
                         mod: {
