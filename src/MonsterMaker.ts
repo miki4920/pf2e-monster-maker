@@ -15,7 +15,7 @@ export class MonsterMaker extends FormApplication {
             template: `modules/pf2e-monster-maker/forms/monsterMakerForm.html`,
             id: "monsterMakerForm",
             title: "Monster Maker Form",
-            height: 800,
+            height: 833,
             width: 400
         });
     }
