@@ -20,6 +20,11 @@
             "lang": "en",
             "name": "English",
             "path": "dist/languages/en.json"
+        },
+        {
+            "lang": "zh-tw",
+            "name": "正體中文",
+            "path": "dist/languages/zh-tw.json"
         }
     ],
     "relationships": {
