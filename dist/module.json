@@ -5,11 +5,11 @@
     "version": "1.0",
     "authors": [{"name": "miki4920"}],
     "minimumCoreVersion": "10",
-    "compatibleCoreVersion": "10",
+    "compatibleCoreVersion": "11",
     "compatibility": {
         "minimum": 10,
-        "verified": "10.286",
-        "maximum": 10
+        "verified": "11.302",
+        "maximum": 11
     },
     "scripts": ["bundle.js"],
     "styles": [
