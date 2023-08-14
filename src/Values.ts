@@ -6,157 +6,209 @@ const aliases = {
             [Options.extreme]: "4",
             [Options.high]: "3",
             [Options.moderate]: "2",
-            [Options.low]: "0"
+            [Options.low]: "0",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "0": {
             [Options.extreme]: "4",
             [Options.high]: "3",
             [Options.moderate]: "2",
-            [Options.low]: "0"
+            [Options.low]: "0",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "1": {
             [Options.extreme]: "5",
             [Options.high]: "4",
             [Options.moderate]: "3",
-            [Options.low]: "1"
+            [Options.low]: "1",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "2": {
             [Options.extreme]: "5",
             [Options.high]: "4",
             [Options.moderate]: "3",
-            [Options.low]: "1"
+            [Options.low]: "1",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "3": {
             [Options.extreme]: "5",
             [Options.high]: "4",
             [Options.moderate]: "3",
-            [Options.low]: "1"
+            [Options.low]: "1",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "4": {
             [Options.extreme]: "6",
             [Options.high]: "5",
             [Options.moderate]: "3",
-            [Options.low]: "2"
+            [Options.low]: "2",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "5": {
             [Options.extreme]: "6",
             [Options.high]: "5",
             [Options.moderate]: "4",
-            [Options.low]: "2"
+            [Options.low]: "2",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "6": {
             [Options.extreme]: "7",
             [Options.high]: "5",
             [Options.moderate]: "4",
-            [Options.low]: "2"
+            [Options.low]: "2",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "7": {
             [Options.extreme]: "7",
             [Options.high]: "6",
             [Options.moderate]: "4",
-            [Options.low]: "2"
+            [Options.low]: "2",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "8": {
             [Options.extreme]: "7",
             [Options.high]: "6",
             [Options.moderate]: "4",
-            [Options.low]: "3"
+            [Options.low]: "3",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "9": {
             [Options.extreme]: "7",
             [Options.high]: "6",
             [Options.moderate]: "4",
-            [Options.low]: "3"
+            [Options.low]: "3",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "10": {
             [Options.extreme]: "8",
             [Options.high]: "7",
             [Options.moderate]: "5",
-            [Options.low]: "3"
+            [Options.low]: "3",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "11": {
             [Options.extreme]: "8",
             [Options.high]: "7",
             [Options.moderate]: "5",
-            [Options.low]: "3"
+            [Options.low]: "3",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "12": {
             [Options.extreme]: "8",
             [Options.high]: "7",
             [Options.moderate]: "5",
-            [Options.low]: "4"
+            [Options.low]: "4",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "13": {
             [Options.extreme]: "9",
             [Options.high]: "8",
             [Options.moderate]: "5",
-            [Options.low]: "4"
+            [Options.low]: "4",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "14": {
             [Options.extreme]: "9",
             [Options.high]: "8",
             [Options.moderate]: "5",
-            [Options.low]: "4"
+            [Options.low]: "4",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "15": {
             [Options.extreme]: "9",
             [Options.high]: "8",
             [Options.moderate]: "6",
-            [Options.low]: "4"
+            [Options.low]: "4",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "16": {
             [Options.extreme]: "10",
             [Options.high]: "9",
             [Options.moderate]: "6",
-            [Options.low]: "5"
+            [Options.low]: "5",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "17": {
             [Options.extreme]: "10",
             [Options.high]: "9",
             [Options.moderate]: "6",
-            [Options.low]: "4"
+            [Options.low]: "4",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "18": {
             [Options.extreme]: "10",
             [Options.high]: "9",
             [Options.moderate]: "6",
-            [Options.low]: "5"
+            [Options.low]: "5",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "19": {
             [Options.extreme]: "11",
             [Options.high]: "10",
             [Options.moderate]: "6",
-            [Options.low]: "5"
+            [Options.low]: "5",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "20": {
             [Options.extreme]: "11",
             [Options.high]: "10",
             [Options.moderate]: "7",
-            [Options.low]: "6"
+            [Options.low]: "6",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "21": {
             [Options.extreme]: "11",
             [Options.high]: "10",
             [Options.moderate]: "7",
-            [Options.low]: "6"
+            [Options.low]: "6",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "22": {
             [Options.extreme]: "11",
             [Options.high]: "10",
             [Options.moderate]: "8",
-            [Options.low]: "6"
+            [Options.low]: "6",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "23": {
             [Options.extreme]: "11",
             [Options.high]: "10",
             [Options.moderate]: "8",
-            [Options.low]: "6"
+            [Options.low]: "6",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         },
         "24": {
             [Options.extreme]: "13",
             [Options.high]: "12",
             [Options.moderate]: "9",
-            [Options.low]: "7"
+            [Options.low]: "7",
+            [Options.terrible]: "-4",
+            [Options.abysmal]: "-5"
         }
     },
     hitPoints: {

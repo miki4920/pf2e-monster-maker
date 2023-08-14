@@ -80,6 +80,7 @@ export enum Options {
     moderate = 'PF2EMONSTERMAKER.moderate',
     low = 'PF2EMONSTERMAKER.low',
     terrible = 'PF2EMONSTERMAKER.terrible',
+    abysmal = "PF2EMONSTERMAKER.abysmal",
     none = 'PF2EMONSTERMAKER.none',
 }
 
@@ -133,7 +134,7 @@ export class CreatureStatisticCategory {
 export const DefaultCreatureStatistics: CreatureStatisticCategory[] = [
     {
         name: 'PF2EMONSTERMAKER.abilityScores',
-        availableOptions: [Options.terrible, Options.low, Options.moderate, Options.high, Options.extreme],
+        availableOptions: [Options.abysmal, Options.terrible, Options.low, Options.moderate, Options.high, Options.extreme],
         defaultValue: Options.moderate,
         statisticEntries: [
             {
