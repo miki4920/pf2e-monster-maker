@@ -209,7 +209,7 @@ export const DefaultCreatureStatistics: CreatureStatisticCategory[] = [
     {
         name: 'PF2EMONSTERMAKER.skills',
         defaultValue: Options.none,
-        availableOptions: [Options.none, Options.low, Options.moderate, Options.high, Options.extreme],
+        availableOptions: [Options.none, Options.terrible, Options.low, Options.moderate, Options.high, Options.extreme],
         statisticEntries: [
             {
                 name: Statistics.acrobatics,
