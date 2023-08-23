@@ -26,6 +26,11 @@
             "lang": "zh-tw",
             "name": "正體中文",
             "path": "dist/languages/zh-tw.json"
+        },
+        {
+            "lang": "cn",
+            "name": "简体中文",
+            "path": "dist/languages/cn.json"
         }
     ],
     "relationships": {
