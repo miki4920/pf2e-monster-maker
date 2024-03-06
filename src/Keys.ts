@@ -63,7 +63,7 @@ export const actorFields = {
 
     [Statistics.hp]: 'system.attributes.hp.max',
 
-    [Statistics.per]: 'system.attributes.perception.value',
+    [Statistics.per]: 'system.perception.mod',
 
     [Statistics.ac]: 'system.attributes.ac.value',
 
