@@ -23,3 +23,23 @@ Hooks.on("renderActorSheet", async function (sheet, html) {
     })
     element.after(button);
 })
+
+Hooks.on("renderActorDirectory", function() {
+    let footer = $("#actors .directory-footer.action-buttons");
+    let monsterButton = $(`<button><i class="fas fa-book"></i>Monster Maker</button>`);
+    footer.append(monsterButton);
+
+    monsterButton.on("click", function() {
+        let monsterData = {
+            name: "Monster",
+            type: "npc",
+        }
+        Actor.create(monsterData).then(actor => {
+            if (actor) {
+                new MonsterMaker(actor).render(true);
+            }
+        });
+
+
+    });
+});
