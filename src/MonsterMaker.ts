@@ -12,7 +12,7 @@ export class MonsterMaker extends FormApplication {
         return mergeObject(super.defaultOptions, {
             classes: ["form"],
             popOut: true,
-            template: `modules/pf2e-monster-maker/forms/monsterMakerForm.html`,
+            template: `modules/pf2e-monster-maker/dist/forms/monsterMakerForm.html`,
             id: "monsterMakerForm",
             title: "Monster Maker Form",
             height: 833,
@@ -21,7 +21,7 @@ export class MonsterMaker extends FormApplication {
     }
 
     applyName(formData) {
-        let name = formData[Statistics.name] ? formData[Statistics.name] : game["i18n"].localize("PF2EMONSTERMAKER.namePlaceholder")
+        let name = formData[Statistics.name] ? formData[Statistics.name] : this.actor.name
         return {"name": name}
     }
 
@@ -102,7 +102,6 @@ export class MonsterMaker extends FormApplication {
     protected async _updateObject(event: Event, formData?: object) {
         if(formData) {
             let updateData = {}
-            console.log(formData)
             this.level = formData[Statistics.level]
             for(const key of Object.keys(formData)) {
                 if(actorFields[key]) {
@@ -126,7 +125,7 @@ export class MonsterMaker extends FormApplication {
         Handlebars.registerHelper('json', function(context) {
             return JSON.stringify(context);
         });
-        return {"CreatureStatistics": JSON.parse(JSON.stringify(this.data)), "Levels": Levels, "RoadMaps": RoadMaps}
+        return {"CreatureStatistics": JSON.parse(JSON.stringify(this.data)), "Levels": Levels, "RoadMaps": RoadMaps, "name": this.actor.name}
     }
 
 }
