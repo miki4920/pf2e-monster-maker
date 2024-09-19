@@ -91,16 +91,8 @@ export class MonsterMaker extends FormApplication {
             const option = formData[skillName]
             if (option !== Options.none) {
                 const value = parseInt(statisticValues[skillName][this.level][option])
-                const skill = {
-                    name: game["i18n"].localize(skillName),
-                    type: 'lore',
-                    system: {
-                        mod: {
-                            value: value,
-                        },
-                    },
-                };
-                await Item.create(skill, {parent: this.actor})
+                const skill = 'system.skills.' + skillName.split('.')[1].toLowerCase();
+                await this.actor.update(foundry.utils.flattenObject({[skill]: {base: value}}));
             }
         }
     }
