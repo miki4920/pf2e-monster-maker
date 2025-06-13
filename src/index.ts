@@ -26,20 +26,20 @@ Hooks.on("renderActorSheet", async function (sheet, html) {
 
 Hooks.on("renderActorDirectory", function() {
     let footer = $("#actors .directory-footer.action-buttons");
-    let monsterButton = $(`<button><i class="fas fa-book"></i>Monster Maker</button>`);
-    footer.append(monsterButton);
+    if (footer.find("button:contains('Monster Maker')").length === 0) {
+        let monsterButton = $(`<button><i class="fas fa-book"></i>Monster Maker</button>`);
+        footer.append(monsterButton);
 
-    monsterButton.on("click", function() {
-        let monsterData = {
-            name: "Monster",
-            type: "npc",
-        }
-        Actor.create(monsterData).then(actor => {
-            if (actor) {
-                new MonsterMaker(actor).render(true);
-            }
+        monsterButton.on("click", function() {
+            let monsterData = {
+                name: "Monster",
+                type: "npc",
+            };
+            Actor.create(monsterData).then(actor => {
+                if (actor) {
+                    new MonsterMaker(actor).render(true);
+                }
+            });
         });
-
-
-    });
+    }
 });

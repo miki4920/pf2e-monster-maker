@@ -5,12 +5,12 @@
     "description": "A module that allows you to make an NPC/Monster from scratch using Creature Building Rules. To use create a new NPC sheet and use the Monster Maker button located in top-right corner of the sheet.",
     "version": "REPLACED AUTOMATICALLY",
     "authors": [{"name": "miki4920"}],
-    "minimumCoreVersion": "12",
-    "compatibleCoreVersion": "12",
+    "minimumCoreVersion": "13",
+    "compatibleCoreVersion": "13",
     "compatibility": {
-        "minimum": 12,
-        "verified": "12.327",
-        "maximum": 12
+        "minimum": 13,
+        "verified": "13.345",
+        "maximum": 13
     },
     "scripts": ["dist/bundle.js"],
     "styles": [
