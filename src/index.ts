@@ -6,7 +6,23 @@ Hooks.on('init', async function () {
         type: Object,
         default: {}
     });
+
+    await game["settings"].register("pf2e-monster-maker", "abbreviateName", {
+        name:    "Abbreviate Monster Maker",
+        hint:    "Turn this on if you prefer to see “MM” instead of the full title “Monster Maker” in the monster sheet.",
+        scope:   "world",
+        config:  true,
+        type:    Boolean,
+        default: false
+    });
 })
+
+function getMonsterManualLabel () {
+    return game["settings"].get(
+        "pf2e-monster-maker",
+        "abbreviateName"
+    ) ? "MM" : "Monster Maker";
+}
 
 Hooks.on("renderActorSheet", async function (sheet, html) {
     let actor = sheet.object
@@ -17,7 +33,8 @@ Hooks.on("renderActorSheet", async function (sheet, html) {
         return;
     }
     let element = html.find(".window-header .window-title");
-    let button = $(`<a class="popout" style><i class="fas fa-book"></i>Monster Maker</a>`);
+    let label = getMonsterManualLabel()
+    let button = $(`<a class="popout" style><i style="padding: 0 4px;" class="fas fa-book"></i>${label}</a>`);
     button.on("click", () => {
         new MonsterMaker(actor).render(true)
     })
